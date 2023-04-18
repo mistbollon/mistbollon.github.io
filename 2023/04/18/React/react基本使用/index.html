@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>React 基本使用 - GuoPeng Blog</title>
+
+  
+    <meta name="description" content="react 使用一、react 基础01.react 基本使用1.react 概念 react 概念  React 是一个开源的 JavaScript 库，用于构建 web 应用中的视图层，既是 web 应用的前端用户页面。（一个用于构建用户界面的 javascript 库，与 2012 年由 Facebook 创建，13 年 5 月开源维护） 2.创建 react 项目指令使用 123456#全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React 基本使用">
+<meta property="og:url" content="http://example.com/2023/04/18/React/react%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="GuoPeng Blog">
+<meta property="og:description" content="react 使用一、react 基础01.react 基本使用1.react 概念 react 概念  React 是一个开源的 JavaScript 库，用于构建 web 应用中的视图层，既是 web 应用的前端用户页面。（一个用于构建用户界面的 javascript 库，与 2012 年由 Facebook 创建，13 年 5 月开源维护） 2.创建 react 项目指令使用 123456#全">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-18T14:51:50.053Z">
+<meta property="article:modified_time" content="2023-04-18T15:04:21.941Z">
+<meta property="article:author" content="陈国朋">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/icon.svg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/snow-leopard.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">GuoPeng</div><div class="sub normal cap">欢迎来到我的博客</div><div class="sub hover cap" style="opacity:0"> 淡泊明志</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">React 基本使用</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81react-%E5%9F%BA%E7%A1%80"><span class="toc-text">一、react 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01-react-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">01.react 基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-react-%E6%A6%82%E5%BF%B5"><span class="toc-text">1.react 概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA-react-%E9%A1%B9%E7%9B%AE"><span class="toc-text">2.创建 react 项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-react-%E5%88%9D%E4%BD%BF%E7%94%A8"><span class="toc-text">3.react 初使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-JSX-%E6%A6%82%E8%BF%B0"><span class="toc-text">4.JSX 概述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-JSX-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">5.JSX 注意事项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-JSX-%E5%B5%8C%E5%85%A5%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">6.JSX 嵌入表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-text">7.条件渲染</span></a></li></ol></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/React/">React</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-18T14:51:50.053Z">2023-04-18</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>React 基本使用</span></h1>
+<h1 id="react-使用"><a href="#react-使用" class="headerlink" title="react 使用"></a>react 使用</h1><h3 id="一、react-基础"><a href="#一、react-基础" class="headerlink" title="一、react 基础"></a>一、react 基础</h3><h4 id="01-react-基本使用"><a href="#01-react-基本使用" class="headerlink" title="01.react 基本使用"></a>01.react 基本使用</h4><h5 id="1-react-概念"><a href="#1-react-概念" class="headerlink" title="1.react 概念"></a>1.react 概念</h5><blockquote>
+<p>react 概念</p>
+</blockquote>
+<p>React 是一个开源的 JavaScript 库，用于构建 web 应用中的视图层，既是 web 应用的前端用户页面。（一个用于构建用户界面的 javascript 库，与 2012 年由 Facebook 创建，13 年 5 月开源维护）</p>
+<h5 id="2-创建-react-项目"><a href="#2-创建-react-项目" class="headerlink" title="2.创建 react 项目"></a>2.创建 react 项目</h5><p>指令使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#全局安装react脚手架</span></span><br><span class="line">npm install create-react-app@5.0.1 -g</span><br><span class="line"><span class="comment">#创建项目 名称</span></span><br><span class="line">create-react-app react-basic</span><br><span class="line"><span class="comment">#进入项目根目录启动项目</span></span><br><span class="line">npm start</span><br></pre></td></tr></table></figure>
+
+<p>目录结构分析</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目结构分析</span></span><br><span class="line">├── README.md                     <span class="comment"># 项目的说明书</span></span><br><span class="line">├── package.json                  <span class="comment"># npm 包说明文件、记录项目信息</span></span><br><span class="line">├── package-lock.json             <span class="comment"># 跟踪被安装的每个软件包的确切版本</span></span><br><span class="line">├── public                        <span class="comment"># 本地开发服务器提供的静态资源目录</span></span><br><span class="line">│   ├── favicon.ico               <span class="comment"># 网站图标、显示在浏览器的标签栏中</span></span><br><span class="line">│   ├── index.html                <span class="comment"># 项目的 HTML 模板</span></span><br><span class="line">│   ├── logo192.png               <span class="comment"># react logo 图片 (示例代码中用于设置 IOS 移动端网站图标)</span></span><br><span class="line">│   ├── logo512.png               <span class="comment"># react logo 图片</span></span><br><span class="line">│   ├── manifest.json             <span class="comment"># web 应用清单如名称, 作者, 图标和描述 (主要用于将 Web 应用程序安装到设备的主屏幕)</span></span><br><span class="line">│   └── robots.txt                <span class="comment"># 爬虫协议文件</span></span><br><span class="line">└── src                           <span class="comment"># 项目源码目录</span></span><br><span class="line">    ├── App.css                   <span class="comment"># 示例程序中的根组件样式文件</span></span><br><span class="line">    ├── App.js                    <span class="comment"># 示例程序中的根组件文件</span></span><br><span class="line">    ├── App.test.js               <span class="comment"># 示例程序中的根组件测试文件</span></span><br><span class="line">    ├── index.css                 <span class="comment"># 示例程序中的全局样式文件</span></span><br><span class="line">    ├── index.js                  <span class="comment"># 项目的入口文件</span></span><br><span class="line">    ├── logo.svg                  <span class="comment"># 示例程序中根组件中显示的网站图标文件</span></span><br><span class="line">    ├── reportWebVitals.js        <span class="comment"># 测试应用程序的性能</span></span><br><span class="line">    └── setupTests.js             <span class="comment"># 项目的测试文件</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-react-初使用"><a href="#3-react-初使用" class="headerlink" title="3.react 初使用"></a>3.react 初使用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#创建h1元素</span><br><span class="line">#参数属性-》(标记名称，标记属性，子元素...);</span><br><span class="line">const title = React.createElement(</span><br><span class="line"> &quot;h1&quot;,</span><br><span class="line"> &#123;title:&quot;hello&quot;,id:1&#125;,</span><br><span class="line"> &quot;hello react&quot;</span><br><span class="line">)</span><br><span class="line">document.createElement(&quot;h1&quot;);</span><br><span class="line">#获取public文件下的index.html中的div盒子id</span><br><span class="line">const root = ReactDOM.createRoot(document.getElementById(&quot;root&quot;))</span><br><span class="line">#使用render方法生成template模板</span><br><span class="line">root.render(title);</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-JSX-概述"><a href="#4-JSX-概述" class="headerlink" title="4.JSX 概述"></a>4.JSX 概述</h5><blockquote>
+<p>jsx 概念</p>
+</blockquote>
+<p>jsx 语法是 React 提供另一种创建用户界面的方式，看起来很像 HTML,但他绝不是 HTML,他是一只 JavaScript 语法扩展。facebook 处于性能考虑，解决必须通过 React.createElement 创建元素，创建出了 jsx，在应用构建的过程中 jsx 由 babel(js 编译器)转换成 React.createElement 方法调用</p>
+<blockquote>
+<p>代码样式</p>
+</blockquote>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello React<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>react<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">const</span> root = <span class="title class_">ReactDOM</span>.<span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;root&quot;</span>));</span><br><span class="line">root.<span class="title function_">render</span>(list);</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-JSX-注意事项"><a href="#5-JSX-注意事项" class="headerlink" title="5.JSX 注意事项"></a>5.JSX 注意事项</h5><p>(1)JSX 格式美化</p>
+<p>当 jsx 中存在多个标记使用小括号（）进行包裹，使代码格式美化排列，创建元素时，元素的最外层必须要有一个根标记</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsx = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>(2)避免出现无意义标记，可使用幽灵标记&lt;&gt;&lt;&#x2F;&gt;(完整语法&lt;React.Fragment&gt;&lt;&#x2F;React.Fragment&gt;)</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> jsx = (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>(3)JSX 中使用单标签必须是闭合状态</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span>/&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>(4)在 JSX 中标记属性使用小驼峰命名法 （由多个单词组成，第一个单词首字符小写，其他单词首字符大写）</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input maxLength=<span class="string">&quot;100&quot;</span> readOnly autoFocus /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>(5)在 JSX 中为元素添加属性时使用 className 代替 class、htmlFor 代替 for （jsx 本质上是 javaScript）</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=<span class="string">&quot;text&quot;</span> className=<span class="string">&quot;todos&quot;</span>/&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">label</span> <span class="attr">htmlFor</span>=<span class="string">&quot;demo&quot;</span>/&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h5 id="6-JSX-嵌入表达式"><a href="#6-JSX-嵌入表达式" class="headerlink" title="6.JSX 嵌入表达式"></a>6.JSX 嵌入表达式</h5><p>含义：将表达式产生的值渲染到用户界面中。</p>
+<p>表达式就是一个能够产生结果的式子,jsx 里面只能放表达式，非表达式不能被嵌入 JSX</p>
+<p>插入值（{}花括号）包裹插入属性值</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入文本内容</span></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入属性值</span></span><br><span class="line"><span class="keyword">const</span> activeName = <span class="string">&quot;active&quot;</span>;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">className</span>=<span class="string">&#123;activeName&#125;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;x * y&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//渲染函数返回值</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getValue</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;jsx&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;getValue()&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//表达式</span></span><br><span class="line"><span class="keyword">const</span> status = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> jsx = status ? <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>true<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>false<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//插入对象  内容中不能直接插入对象</span></span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> <span class="attr">200</span> &#125;&#125;&gt;</span>&#123;&#123; name: &quot;jsx&quot; &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注释</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="comment">/**/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-条件渲染"><a href="#7-条件渲染" class="headerlink" title="7.条件渲染"></a>7.条件渲染</h5><p>（1）使用 if 分支语句进行条件渲染</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Status</span> = fasle;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">getContent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Status</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>true<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>fasle<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;getContent()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>（2）使用三元运算符进行条件渲染</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Status</span> = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">const</span> jsx = <span class="title class_">Status</span>:<span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>true<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span>:<span class="language-xml"><span class="tag">&lt;<span class="name">span</span>&gt;</span>false<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>(3)使用逻辑运算符进行条件渲染</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">逻辑运算符 &amp;&amp;,全为真时返回真，有一个为假返回假</span><br><span class="line"><span class="literal">true</span>&amp;&amp;<span class="literal">true</span></span><br><span class="line"><span class="literal">false</span>&amp;&amp;<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/04/18/React/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">React性能优化</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/mistbollon">GitHub</a></div><div class="sitemap-group"><span class="fs14">项目</span><a target="_blank" rel="noopener" href="https://github.com/mistbollon?tab=repositories">开源库</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

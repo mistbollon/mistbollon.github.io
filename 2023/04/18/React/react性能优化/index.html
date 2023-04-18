@@ -20,20 +20,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>Hello World - GuoPeng Blog</title>
+  <title>React性能优化 - GuoPeng Blog</title>
 
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="React 组件性能优化1. memoReact.memo 可以对组件输入数据进行浅层比较(简单数据类型比较值，引用数据类型比较内存的引用地址)，如果输入数据没有变化则阻止组件更新。 2. useMemoReact.useMemo 用于在函数式组件中缓存值，避免重复操作执行影响组件运行性能。 3. useCallbackReact.useCallback 用于在函数式组件中缓存方法，避免组件每次重">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/04/13/hello-world/index.html">
+<meta property="og:title" content="React性能优化">
+<meta property="og:url" content="http://example.com/2023/04/18/React/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="GuoPeng Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="React 组件性能优化1. memoReact.memo 可以对组件输入数据进行浅层比较(简单数据类型比较值，引用数据类型比较内存的引用地址)，如果输入数据没有变化则阻止组件更新。 2. useMemoReact.useMemo 用于在函数式组件中缓存值，避免重复操作执行影响组件运行性能。 3. useCallbackReact.useCallback 用于在函数式组件中缓存方法，避免组件每次重">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-13T08:05:06.484Z">
-<meta property="article:modified_time" content="2023-04-17T09:15:23.313Z">
+<meta property="article:published_time" content="2023-04-18T14:51:50.053Z">
+<meta property="article:modified_time" content="2023-04-18T15:04:30.335Z">
 <meta property="article:author" content="陈国朋">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
   
   
@@ -81,7 +81,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Hello World</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">React性能优化</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#React-%E7%BB%84%E4%BB%B6%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-text">React 组件性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-memo"><span class="toc-text">1. memo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-useMemo"><span class="toc-text">2. useMemo</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-useCallback"><span class="toc-text">3. useCallback</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-useDeferredValue"><span class="toc-text">4. useDeferredValue</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-useTransition"><span class="toc-text">5. useTransition</span></a></li></ol></li></ol></li></ol></div></div></widget>
 
 
 
@@ -96,23 +96,15 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AE%BE%E8%AE%A1%E5%BC%80%E5%8F%91/">设计开发</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-13T08:05:06.484Z">2023-04-13</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/React/">React</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-18T14:51:50.053Z">2023-04-18</time></div></div>
 
 <article class='md-text content post'>
-<h1 class="article-title"><span>Hello World</span></h1>
-<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 class="article-title"><span>React性能优化</span></h1>
+<h3 id="React-组件性能优化"><a href="#React-组件性能优化" class="headerlink" title="React 组件性能优化"></a>React 组件性能优化</h3><h5 id="1-memo"><a href="#1-memo" class="headerlink" title="1. memo"></a>1. memo</h5><p>React.memo 可以对组件输入数据进行浅层比较(简单数据类型比较值，引用数据类型比较内存的引用地址)，如果输入数据没有变化则阻止组件更新。</p>
+<h5 id="2-useMemo"><a href="#2-useMemo" class="headerlink" title="2. useMemo"></a>2. useMemo</h5><p>React.useMemo 用于在函数式组件中缓存值，避免重复操作执行影响组件运行性能。</p>
+<h5 id="3-useCallback"><a href="#3-useCallback" class="headerlink" title="3. useCallback"></a>3. useCallback</h5><p>React.useCallback 用于在函数式组件中缓存方法，避免组件每次重新渲染时都返回一个新方法。</p>
+<h5 id="4-useDeferredValue"><a href="#4-useDeferredValue" class="headerlink" title="4. useDeferredValue"></a>4. useDeferredValue</h5><p>React.useDeferredValue 用于获取一个延时更新的值，让 React 在空闲时去更新值；在频繁更新视图的场景下可以避免出现视图卡顿现象。</p>
+<h5 id="5-useTransition"><a href="#5-useTransition" class="headerlink" title="5. useTransition"></a>5. useTransition</h5><p>React.useTransition 用于允许开发者点赞状态渲染的优先级；可以将资源密集型任务优先级降低，等待 React 空闲时执行，避免页面出现卡顿现象。</p>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
@@ -120,7 +112,7 @@
 
 </article>
 
-
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/04/18/React/react%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">React 基本使用</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/04/18/React/react-ts-%E7%B1%BB%E7%BB%84%E4%BB%B6/">React + TypeScript - 类组件</a></div></section></div>
 
 
 
@@ -130,7 +122,7 @@
 
 
       
-<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/mistbollon">GitHub</a></div><div class="sitemap-group"><span class="fs14">项目</span><a target="_blank" rel="noopener" href="https://github.com/mistbollon?tab=repositories">开源库</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 
       <div class='float-panel mobile-only blur' style='display:none'>
