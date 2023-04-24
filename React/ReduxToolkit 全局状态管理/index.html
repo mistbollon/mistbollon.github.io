@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>ReduxToolkit-全局状态管理 - GuoPeng Blog</title>
+
+  
+    <meta name="description" content="ReduxToolkitReduxToolkit 是官方推出的基于 Redux 进行高度封装的工具包，不需下载就可下载，在开发过程中可以用更少的代码完成工作。 使用12345# 新项目# Redux + Plain JS templatenpx create-react-app my-app --template redux# Redux + TypeScript templatenpx crea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ReduxToolkit-全局状态管理">
+<meta property="og:url" content="http://example.com/React/ReduxToolkit%20%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="GuoPeng Blog">
+<meta property="og:description" content="ReduxToolkitReduxToolkit 是官方推出的基于 Redux 进行高度封装的工具包，不需下载就可下载，在开发过程中可以用更少的代码完成工作。 使用12345# 新项目# Redux + Plain JS templatenpx create-react-app my-app --template redux# Redux + TypeScript templatenpx crea">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-24T10:03:42.256Z">
+<meta property="article:modified_time" content="2023-04-24T10:16:50.328Z">
+<meta property="article:author" content="陈国朋">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/icon.svg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/snow-leopard.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">GuoPeng</div><div class="sub normal cap">欢迎来到我的博客</div><div class="sub hover cap" style="opacity:0"> 淡泊明志</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">博客</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">ReduxToolkit-全局状态管理</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%96%B9%E6%B3%95"><span class="toc-text">一、方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-createAction"><span class="toc-text">1.createAction</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-createReducer"><span class="toc-text">2.createReducer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-configureStore"><span class="toc-text">3.configureStore</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-useSelector"><span class="toc-text">4.useSelector</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-useDispatch"><span class="toc-text">5.useDispatch</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-createAsyncThunk"><span class="toc-text">6.createAsyncThunk</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-createSlice-%E7%8A%B6%E6%80%81%E5%88%87%E7%89%87"><span class="toc-text">7.createSlice 状态切片</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#7-1createSlice-prepare"><span class="toc-text">7.1createSlice_prepare</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-configureStore-middleware-%E9%85%8D%E7%BD%AE%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">8.configureStore_middleware 配置中间件</span></a></li></ol></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/React%E4%BD%BF%E7%94%A8/">React使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-24T10:03:42.256Z">2023-04-24</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>ReduxToolkit-全局状态管理</span></h1>
+<h1 id="ReduxToolkit"><a href="#ReduxToolkit" class="headerlink" title="ReduxToolkit"></a>ReduxToolkit</h1><p>ReduxToolkit 是官方推出的基于 Redux 进行高度封装的工具包，不需下载就可下载，在开发过程中可以用更少的代码完成工作。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 新项目</span><br><span class="line"># <span class="title class_">Redux</span> + <span class="title class_">Plain</span> <span class="variable constant_">JS</span> template</span><br><span class="line">npx create-react-app my-app --template redux</span><br><span class="line"># <span class="title class_">Redux</span> + <span class="title class_">TypeScript</span> template</span><br><span class="line">npx create-react-app my-app --template redux-typescript</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 现有项目 (@reduxjs/toolkit 和 react-redux 都自带ts类型声明文件, 不需要单独下载)</span><br><span class="line">npm install @reduxjs/toolkit@<span class="number">1.9</span><span class="number">.5</span> react-redux@<span class="number">8.0</span><span class="number">.5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="一、方法"><a href="#一、方法" class="headerlink" title="一、方法"></a>一、方法</h3><h5 id="1-createAction"><a href="#1-createAction" class="headerlink" title="1.createAction"></a>1.createAction</h5><p>createAction 用于创建 action creator 函数，接收 action 对象的 type 属性作为参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> creator = <span class="title function_">createAction</span>(<span class="string">&quot;type&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-createReducer"><a href="#2-createReducer" class="headerlink" title="2.createReducer"></a>2.createReducer</h5><p>createReducer 用于创建 reducer 函数，使 reducer 函数中的代码细化和拆分。</p>
+<p>addCase 调度操作的 action.type 与提供字段完全匹配运行 reducer。</p>
+<p>addMatcher 里提供的函数返回 true 时运行 reducer。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Reducer</span> = <span class="title function_">createReducer</span>(state, <span class="function">(<span class="params">builder</span>) =&gt;</span> &#123;</span><br><span class="line">  builder</span><br><span class="line">    .<span class="title function_">addCase</span>(creator, <span class="function">() =&gt;</span> (&#123;&#125;))</span><br><span class="line">    .<span class="title function_">addMatcher</span>(<span class="function">(<span class="params">action</span>) =&gt;</span> action.<span class="property">type</span> === <span class="string">&quot;action.type&quot;</span>),</span><br><span class="line">    <span class="function">(<span class="params">state, action</span>) =&gt;</span> (&#123;&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-configureStore"><a href="#3-configureStore" class="headerlink" title="3.configureStore"></a>3.configureStore</h5><p>configureStore 创建和配置 Redux 的 store 对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">reducer</span>: &#123;</span><br><span class="line">    counterReducer,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//是否开启redux工具</span></span><br><span class="line">  <span class="attr">devTools</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> !== <span class="string">&quot;production&quot;</span>,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-useSelector"><a href="#4-useSelector" class="headerlink" title="4.useSelector"></a>4.useSelector</h5><p>useSelector 用于在函数式组件中获取 store 对象中的状态的方法,接收函数为参数，参数函数的参数表示状态对象，参数函数返回要获取的具体状态。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">useSelector</span>(<span class="function">(<span class="params">state</span>)=&gt;</span>state.<span class="property">counterReducer</span>.<span class="property">count</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-useDispatch"><a href="#5-useDispatch" class="headerlink" title="5.useDispatch"></a>5.useDispatch</h5><p>useDispatch 是用于在函数式组件中获取 dispatch 的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"><span class="title function_">dispatch</span>(获取dispatch);</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-createAsyncThunk"><a href="#6-createAsyncThunk" class="headerlink" title="6.createAsyncThunk"></a>6.createAsyncThunk</h5><p>createAsyncThunk 用于创建执行异步操作的 action creator 函数。第一个参数是 action 对象的 type 属性，第二个参数是指向异步操作的函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Creators</span> = <span class="title function_">createAsyncThunk</span>(<span class="string">&quot;type属性&quot;</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&quot;http://123&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//Creators.pending-&gt;加载</span></span><br><span class="line"><span class="comment">//Creators.fulfilled-&gt;请求成功</span></span><br><span class="line"><span class="comment">//Creators.rejected-&gt;请求失败</span></span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> initialState = &#123; <span class="attr">status</span>: <span class="string">&quot;idle&quot;</span>, <span class="attr">data</span>: [], <span class="attr">error</span>: <span class="literal">null</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Reducer</span> = <span class="title function_">createReducer</span>(initialState, <span class="function">(<span class="params">builder</span>) =&gt;</span> &#123;</span><br><span class="line">  builder</span><br><span class="line">    .<span class="title function_">addCase</span>(loadTodos.<span class="property">pending</span>, <span class="function">() =&gt;</span> (&#123;</span><br><span class="line">      <span class="attr">status</span>: <span class="string">&quot;loading&quot;</span>,</span><br><span class="line">      <span class="attr">data</span>: [],</span><br><span class="line">      <span class="attr">error</span>: <span class="literal">null</span>,</span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">addCase</span>(loadTodos.<span class="property">fulfilled</span>, <span class="function">(<span class="params">state, action</span>) =&gt;</span> (&#123;</span><br><span class="line">      <span class="attr">status</span>: <span class="string">&quot;success&quot;</span>,</span><br><span class="line">      <span class="attr">data</span>: action.<span class="property">payload</span>,</span><br><span class="line">      <span class="attr">error</span>: <span class="literal">null</span>,</span><br><span class="line">    &#125;))</span><br><span class="line">    .<span class="title function_">addCase</span>(loadTodos.<span class="property">rejected</span>, <span class="function">(<span class="params">state, action</span>) =&gt;</span> (&#123;</span><br><span class="line">      <span class="attr">status</span>: <span class="string">&quot;error&quot;</span>,</span><br><span class="line">      <span class="attr">data</span>: [],</span><br><span class="line">      <span class="attr">error</span>: action.<span class="property">error</span>,</span><br><span class="line">    &#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-createSlice-状态切片"><a href="#7-createSlice-状态切片" class="headerlink" title="7.createSlice 状态切片"></a>7.createSlice 状态切片</h4><p>action creator 函数、reducer 函数全部都由状态切片生成，状态切片可以使在开发时更专注于状态的管理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createSlice &#125; <span class="keyword">from</span> <span class="string">&quot;@reduxjs/toolkit&quot;</span>;</span><br><span class="line"><span class="comment">// createSlice 方法的返回值是一个对象</span></span><br><span class="line"><span class="comment">// actions: 该对象中存储的是操作状态 action creator 函数, reducers 配置对象中的函数名称将会作为 action creator 函数的名称</span></span><br><span class="line"><span class="comment">// reducer: 原本开发者自己定义的 reducer 函数</span></span><br><span class="line"><span class="keyword">const</span> &#123; actions, <span class="attr">reducer</span>: counterReducer &#125; = <span class="title function_">createSlice</span>(&#123;</span><br><span class="line">  <span class="comment">// 状态名称, 该名称将会被用于 action 对象的 type 属性值的第一部分</span></span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;counter&quot;</span>,</span><br><span class="line">  <span class="comment">// 初始状态</span></span><br><span class="line">  <span class="attr">initialState</span>: &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;,</span><br><span class="line">  <span class="comment">// 方法接收两个参数, state 对象和 action 对象</span></span><br><span class="line">  <span class="comment">// 在方法中可以直接对状态对象进行操作, 不需要返回新的状态对象</span></span><br><span class="line">  <span class="comment">// 调用 action creator 函数时传递的参数将会被放置在 action.payload 属性中</span></span><br><span class="line">  <span class="attr">reducers</span>: &#123;</span><br><span class="line">    <span class="attr">increment</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">count</span> += <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">decrement</span>: <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">count</span> -= <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">incrementByCount</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">      state.<span class="property">count</span> = state.<span class="property">count</span> + action.<span class="property">payload</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出 action creator 函数供组件使用</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> &#123; increment, decrement, incrementByCount &#125; = actions;</span><br><span class="line"><span class="comment">// 导出 counterReducer 函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> counterReducer;</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-1createSlice-prepare"><a href="#7-1createSlice-prepare" class="headerlink" title="7.1createSlice_prepare"></a>7.1createSlice_prepare</h5><p>prepare 方法允许开发者在 action 指令发出后 reducer 函数接收前先对 action 对象中的 payload 属性值进行处理。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">incrementByCount</span>: &#123;</span><br><span class="line">      <span class="attr">prepare</span>: <span class="function">(<span class="params">payload</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// prepare 方法接收 payload 作为参数</span></span><br><span class="line">        <span class="comment">// 要求返回对象, 该对象会和 action 对象进行合并</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">          <span class="attr">payload</span>: payload + <span class="number">10</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">reducer</span>: <span class="function">(<span class="params">state, action</span>) =&gt;</span> &#123;</span><br><span class="line">        state.<span class="property">count</span> = state.<span class="property">count</span> + action.<span class="property">payload</span>;</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-configureStore-middleware-配置中间件"><a href="#8-configureStore-middleware-配置中间件" class="headerlink" title="8.configureStore_middleware 配置中间件"></a>8.configureStore_middleware 配置中间件</h5><p>middleware 选项的值是一个函数，该函数有一个参数，该参数习惯被命名为 getDefaultMiddeware，它就是用来获取内置中间件函数的。etDefaultMiddeware 方法的返回值是一个数组，数组中包含内置的中间件函数，开发者只需要在该数组中添加中间件函数即可。middleware 选项要求在该函数中返回最新的中间件函数数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//npm i redux-logger@3.0.6</span></span><br><span class="line"><span class="keyword">import</span> logger <span class="keyword">from</span> <span class="string">&quot;redux-logger&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> store = <span class="title function_">configureStore</span>(&#123;</span><br><span class="line">  <span class="attr">middleware</span>: <span class="function">(<span class="params">getDefaultMiddleware</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">getDefaultMiddleware</span>().<span class="title function_">concat</span>(logger);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/React/react%E5%87%BD%E6%95%B0%E7%BB%84%E4%BB%B6/">React 函数组件</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/mistbollon">GitHub</a></div><div class="sitemap-group"><span class="fs14">项目</span><a target="_blank" rel="noopener" href="https://github.com/mistbollon?tab=repositories">开源库</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
