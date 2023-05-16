@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>React专题 - GuoPeng Blog</title>
+
+  
+    <meta name="description" content="如何创建 React 项目20qz-pylcc 123456npm install create-react-app -gcreate-react-app .&#x2F;react-basiccd react-basicnpm startnpm init react-app .&#x2F;react-basic  如何理解 JSX 1JSX 是 Facebook 创建的 JavaScript 语法扩展,React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React专题">
+<meta property="og:url" content="http://example.com/%E9%9D%A2%E8%AF%95%E9%A2%98/React%E4%B8%93%E9%A2%98/index.html">
+<meta property="og:site_name" content="GuoPeng Blog">
+<meta property="og:description" content="如何创建 React 项目20qz-pylcc 123456npm install create-react-app -gcreate-react-app .&#x2F;react-basiccd react-basicnpm startnpm init react-app .&#x2F;react-basic  如何理解 JSX 1JSX 是 Facebook 创建的 JavaScript 语法扩展,React">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-16T07:57:24.717Z">
+<meta property="article:modified_time" content="2023-05-16T07:59:26.410Z">
+<meta property="article:author" content="陈国朋">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/snow-leopard.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">GuoPeng</div><div class="sub normal cap">欢迎来到我的博客</div><div class="sub hover cap" style="opacity:0"> 淡泊明志</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">笔记</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/%E9%9D%A2%E8%AF%95%E9%A2%98/React%E4%B8%93%E9%A2%98/"><span class="title">React专题</span></a><a class="item title" href="/%E9%9D%A2%E8%AF%95%E9%A2%98/%E9%87%8D%E7%82%B9%E6%8E%8C%E6%8F%A1%E9%9D%A2%E8%AF%95%E9%A2%98/"><span class="title">重点掌握面试题</span></a><a class="item title" href="/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%BF%85%E9%97%AE%E5%9F%BA%E7%A1%80/"><span class="title">前端必问基础</span></a><a class="item title" href="/Html/html%E5%9F%BA%E7%A1%80/"><span class="title">HTML基础</span></a><a class="item title" href="/React/react%E8%B7%AF%E7%94%B1v6/"><span class="title">React路由[V6]</span></a></div></widget>
+
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-05-16T07:57:24.717Z">2023-05-16</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>React专题</span></h1>
+<ol>
+<li><p>如何创建 React 项目<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install create-react-app -g</span><br><span class="line">create-react-app ./react-basic</span><br><span class="line">cd react-basic</span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line">npm init react-app ./react-basic</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何理解 JSX</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JSX 是 Facebook 创建的 JavaScript 语法扩展,React 中使用 JSX 来构建用户界面.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在使用 JSX 时有哪些注意事项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. JSX 必须有根元素 &lt;&gt;&lt;/&gt;</span><br><span class="line">2. 单标记必须闭合 &lt;img src=&quot;&quot; /&gt;</span><br><span class="line">3. 在 JSX 的外部可以加上小括号用于美化其对其方式</span><br><span class="line">4. 只有表达式才可以嵌入到 JSX 中, 非表达式不可以 if else for switch</span><br><span class="line">5. 属性名称遵循驼峰式命名法</span><br><span class="line">6. Null undefined true false 可以被渲染 但是渲染的结果是空</span><br><span class="line">7. JSX 中不能直接渲染对象</span><br><span class="line">8. 使用 className 替换 class、使用 htmlFor 替换 for</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何将对象类型的数据直接嵌入 JSX 中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">要将对象转换为对象的字符串格式才可以。JSON.stringify(obj)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是条件渲染, 在 React 中有哪些手段可以实现条件渲染。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">根据条件决定渲染什么内容</span><br><span class="line">if 三元运算 逻辑运算</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何实现列表渲染</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 先通过 map 方法将纯数据数组转换为 JSX 数组</span><br><span class="line">2. 将 JSX 数组放入插入表达式中让其自动展开</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 React 中如何使用本地图片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import img from &quot;some/path&quot;;</span><br><span class="line">const img = require(&quot;some/path&quot;);</span><br><span class="line"></span><br><span class="line">&lt;img src=&#123;img&#125; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要说明如何为元素绑定事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">事件名称采用驼峰式命名法, 将事件名称直接作为属性添加到元素的身上</span><br><span class="line">事件名称对应的值,就是事件处理函数本身</span><br><span class="line"></span><br><span class="line">&lt;element onClick=&#123;() =&gt; &#123;&#125;&#125;&gt;&lt;/element&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是组件、组件为开发者带来了哪些好处</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">组件就是可以被组合的零部件, React 采用组件化的方式构建用户界面</span><br><span class="line">就是将一个完整的页面拆分成一个一个小的部分再组合</span><br><span class="line">一个组件就是页面中的一小块区域, 要包含 html 结构、css 样式、javascript 逻辑</span><br><span class="line">React 中有两种组件：函数式组件和class组件。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何为组件添加组件级样式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 创建样式表文件, 文件名称必须以 .module.css 结尾, 名称前面一般约定写组件名称, 比如 App.module.css</span><br><span class="line">2. 在组件中通过 import styles from &quot;./App.module.css&quot; 的方式导入样式表</span><br><span class="line">3. 在组件中通过 className 使用样式表中的样式</span><br><span class="line">		&lt;element className=&#123;styles.样式表中的类名&#125;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类组件如何声明组件状态、如何获取组件状态、如何修改组件状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将组件状态存储到 state 属性中, state 属性的值是对象类型, 对象中的属性就是状态</span><br><span class="line">在 render 方法中: this.state.状态</span><br><span class="line">this.setState()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类组件中的 constructor 方法、render 方法中的 this 指向谁?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当前类的实例对象</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何使事件处理函数中的 this 指向当前组件的实例对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 将事件处理函数更改为箭头函数</span><br><span class="line">2. 使用 bind 更改事件处理函数中的this</span><br><span class="line">3. &lt;element onClick=&#123;() =&gt; this.clickHandler()&#125; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在类组件中如何获取 DOM 对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createRef &#125; from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">	divRef = createRef();</span><br><span class="line">	render() &#123;</span><br><span class="line">		return &lt;div ref=&#123;divRef&#125; onClick=&#123;() =&gt; console.log(divRef.current)&#125;&gt;&lt;/div&gt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是受控表单、如何实现受控表单</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">表单的值由组件状态进行控制, 用户在表单中实时输入的时候, 我们要将用户输入的内容同步到组件状态之中, 开发者要想获取表单值, 只需要从组件状态中进行获取即可.</span><br><span class="line"></span><br><span class="line">	class App extends React.Component &#123;</span><br><span class="line">		state = &#123;</span><br><span class="line">			text: &quot;&quot;</span><br><span class="line">		&#125;</span><br><span class="line">		render() &#123;</span><br><span class="line">			return &lt;input type=&quot;text&quot; value=&#123;this.state.text&#125; onChange=&#123;(event) =&gt; this.setState(&#123;text: event.target.value&#125;)&#125;/&gt;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是组件通讯</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据能够在不同的组件之间进行流动。</span><br><span class="line">父组件能够将自己的状态传递到子组件, 子组件可以修改父组件中定义的状态</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果向组件内部传递数据、如何在组件内部获取数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">通过组件属性的方式(props)</span><br><span class="line"></span><br><span class="line">&lt;App name=&quot;张三&quot;/&gt;</span><br><span class="line"></span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		this.props.name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是单向数据流动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据在组件之间进行流动的时候, 方向只能是从上到下, 也就是说, 只能上层组件中的数据传递到下层组件</span><br><span class="line">使数据流动变得简单, 程序更加好维护.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>props 为什么是只读的.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">为了实现单向实现数据流动, 如果 props 不是只读的, 是可以修改的, 那么单向数据流动将无法实现.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子组件中如何更新父组件中的状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父组件定义修改状态的方法, 父组件将修改状态的方式传递到子组件, 子组件通过父组件传递下来的方法进行状态的修改。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何实现兄弟组件通讯</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">利用状态提升思想, 将兄弟组件之间需要共享的状态提供至它们之间公共的父级中, 然后通过 props 的方式再将状态分别传递到兄弟组件中.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何实现跨级组件通讯<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">利用上下文对象实现.</span><br><span class="line"></span><br><span class="line">import &#123; createContext &#125; from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">// Provider 用来保存状态并提供状态</span><br><span class="line">// Consumer 用来获取状态</span><br><span class="line">const &#123; Provider, Consumer &#125; = createContext();</span><br><span class="line"></span><br><span class="line">&lt;Provider value=&#123;&#123;name: &quot;张三&quot;&#125;&#125;&gt;</span><br><span class="line">	&lt;App /&gt;</span><br><span class="line">&lt;/Provider&gt;</span><br><span class="line"></span><br><span class="line">&lt;Consumer&gt;</span><br><span class="line">	&#123; (value) =&gt; &lt;div&gt;&#123;value.name&#125;&lt;/div&gt; &#125;</span><br><span class="line">&lt;/Consumer&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件属性校验的意义是什么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. 防止组件的调用者传递错误的属性值类型, 导致组件内部的代码执行出错</span><br><span class="line">2. 当组件的调用者传递了错误的属性值时, 给组件的调用者更加精准的错误提示</span><br><span class="line"></span><br><span class="line">npm install prop-types</span><br><span class="line"></span><br><span class="line">import PropTypes from &quot;prop-types&quot;;</span><br><span class="line"></span><br><span class="line">class App extends React.Component &#123;</span><br><span class="line">	static propTypes = &#123;</span><br><span class="line">		colors: PropTypes.array.isRequired</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是组件属性的默认值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我们在定义组件的时候, 可以为即将接收的外部数据设置默认值, 组件的调用者在传值的情况下组件使用调用者传递的值, 没传就是用默认值, 这样可以防止组件代码执行出错.</span><br><span class="line"></span><br><span class="line">	class App extends React.Component &#123;</span><br><span class="line">		static defaultProps = &#123;&#125;;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是组件的生命周期</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">从组件创建到销毁, 它经历的整个过程被称之为组件的生命周期.</span><br><span class="line">开发者通过组件生命周期函数将业务逻辑插入到组件运行的各个阶段.</span><br><span class="line">所谓生命周期函数就是 React 提供的一些固定名字的函数, 在组件运行的各个阶段被自动调用.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React 类组件中组件生命周期函数有几大阶段, 分别对应哪些常见的生命周期函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1. 挂载阶段</span><br><span class="line"></span><br><span class="line">	创建组件、渲染组件视图</span><br><span class="line"></span><br><span class="line">	constructor render componentDidMount</span><br><span class="line"></span><br><span class="line">	constructor: 做一些初始化的工作, 比如更改组件中的函数的this 指向、初始化状态对象、创建引用对象、创建业务逻辑需要的公共属性</span><br><span class="line"></span><br><span class="line">	render: 渲染视图、不能直接调用 setState 更新状态</span><br><span class="line"></span><br><span class="line">	componentDidMount: 操作DOM、发送网络请求、更新组件状态</span><br><span class="line"></span><br><span class="line">2. 更新阶段</span><br><span class="line"></span><br><span class="line">	1. 什么情况下会触发组件更新</span><br><span class="line"></span><br><span class="line">		1. 组件状态发生变化</span><br><span class="line">		2. 父组件更新</span><br><span class="line">		3. 强制更新 forceUpdate</span><br><span class="line"></span><br><span class="line">	2. render componentDidUpdate</span><br><span class="line"></span><br><span class="line">		componentDidUpdate: 操作DOM、发送网络请求、有条件的更新组件状态</span><br><span class="line"></span><br><span class="line">3. 卸载阶段</span><br><span class="line"></span><br><span class="line">	componentWillUnMount</span><br><span class="line"></span><br><span class="line">	清理操作、清除定时器、清除事件、清除订阅、清除全局状态</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>页面初始渲染时要请求的数据要写在哪个生命周期函数中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件卸载之前需要干些什么事情</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">清理操作、清除定时器、清除事件、清除订阅、清除全局状态</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在调用 setState 方法时传递对象作为参数和传递函数作为参数主要的区别在哪</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">区别主要体现在同时多次调用 setState 方法时, 传递对象在做状态合并时, 它是覆盖式合并, 传递函数时, 它是累计性合并.</span><br><span class="line"></span><br><span class="line">this.setState(&#123;count: 1&#125;)</span><br><span class="line">this.setState(&#123;count: 1&#125;)</span><br><span class="line"></span><br><span class="line">this.setState((state) =&gt; (&#123;count: state.count + 1&#125;))</span><br><span class="line">this.setState((state) =&gt; (&#123;count: state.count + 1&#125;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为什么在调用 setState 方法之后不能立即获取到更新之后的状态值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在 React 中，当调用 setState 方法更新组件的状态时，React 并不会立即更新组件的状态，而是会将状态更新请求放入更新队列中，以便在适当的时候进行更新。这是因为 React 会将多个 setState 方法调用进行合并，以提高性能和优化更新。</span><br><span class="line"></span><br><span class="line">因此，如果在调用 setState 后立即尝试访问状态值，可能会得到之前的状态值，因为此时更新队列尚未被处理。如果需要在更新完成后访问更新后的状态值，可以使用 setState 的第二个参数，即回调函数。回调函数会在组件状态更新完成后被调用，可以在回调函数中访问更新后的状态值。</span><br><span class="line"></span><br><span class="line">this.setState(&#123;count: this.state.count + 1&#125;, () =&gt; &#123;</span><br><span class="line">  console.log(this.state.count); // 在回调函数中访问更新后的状态值</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是浅比较</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在 React 中，当一个组件的状态或属性更新时，React 会进行一个称为“比较”的过程来确定是否需要重新渲染组件。浅比较是 React 中一种比较对象的方式，用于检查两个对象是否相等。</span><br><span class="line"></span><br><span class="line">浅比较只会比较对象的引用，而不会比较对象的值。如果两个对象的引用不同，即使它们的值相同，浅比较也会认为它们是不相等的。如果两个对象的引用相同，即使它们的值已经发生了变化，浅比较仍然认为它们是相等的。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PureComponent 类的作用是什么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以防止组件的无效渲染.</span><br><span class="line">在组件即将更新之前, PureComponent 会拿着上一次更新组件时使用的 props 和 即将更新组件时使用的 prop 进行比较</span><br><span class="line">如果比较结果是相同的, 阻止组件渲染, 因为即使重新渲染, 得到的最终结果也是一样的.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>shouldComponentUpdate 生命周期函数的作用是什么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过 shouldComponentUpdate 生命周期函数的返回值可以决定组件是否继续更新. true 继续更新 false 阻止更新.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组件状态管理存在什么问题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当组件与组件之间要进行状态共享的时候, 状态需要在不同的组件之间通过 props 的方式进行传递, 传递过程非常复杂.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>和组件状态管理相比, 全局状态管理有什么优势</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">全局状态管理是指将状态存储到一个脱离于组件的地方进行管理, 所有组件都可以直接获取状态, 直接修改状态, 避免了组件状态管理中的 状态需要在不同的组件之间进行传递的复杂过程.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要描述 Redux 管理状态的模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 中通过 store 对象进行状态的管理, store 对象可以存储状态, 有提供了管理状态的方法.</span><br><span class="line">通过 store.getState 获取状态, 通过 store.dispatch 修改状态, 通过 store.subscribe 订阅状态的变化.</span><br><span class="line"></span><br><span class="line">在 Redux 中对状态进行的任何修改都需要通过 action 对象进行描述, action 对象中有 type 属性, 它就是具体的用来描述的属性</span><br><span class="line">视图中要想修改状态, 必须调用 dispatch 方法接收 action 对象, 该命令会被 reducer 函数接收, 在 reducer 函数要对 action.type 进行匹配</span><br><span class="line">根据 action 的类型对状态进行不同的处理, 处理完成之后要返回, 给 store 进行存储.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 Redux 中通过什么方法创建 store 对象, 并描述该方法的使用方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const store = createStore(reducer, initialState)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>描述 action 对象的作用是什么、什么是 action creator、为什么会有 action creator 这样的概念</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 中, action 对象用于描述当前要对状态进行怎样的操作, 它就是一个命令, 通过 dispatch 进行发送.</span><br><span class="line">action creator 就是一个用于返回 action 对象的函数</span><br><span class="line">它存在的目的是消除相似 action 对象的重复定义</span><br><span class="line"></span><br><span class="line">&#123; type: &quot;increment&quot;, payload: 1 &#125;</span><br><span class="line">&#123; type: &quot;increment&quot;, payload: 2 &#125;</span><br><span class="line">&#123; type: &quot;increment&quot;, payload: 3 &#125;</span><br><span class="line"></span><br><span class="line">const increment = (payload) =&gt; (&#123;type: &quot;increment&quot;, payload&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要描述 reducer 函数的用法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reducer 就是一个函数, 在 Redux 中用于对状态进行更新, 是具体的写更新状态代码的地方.</span><br><span class="line">reducer 函数接收两个参数, 第一个参数是要管理的状态对象, 第二个参数是 action 对象</span><br><span class="line">在 reducer 函数内部, 我们通常通过编写 switch case 对 action 类型进行匹配, 根据不同的 action 类型, 对状态进行不同的更新.</span><br><span class="line">在状态更新完成之后, 必须要返回新的状态, 如果没有匹配到 action type, 默认就返回当前状态.</span><br><span class="line">在 reducer 中不能做任何和修改状态无关的事情, 比如发送 ajax 请求, 开启定时器等</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 redux 中使用什么方法获取状态仓库中存储的状态对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 中获取状态仓库中存储的状态对象，可以使用 Redux 提供的 getState() 方法。getState() 方法是 Redux Store 对象中的一个函数，用于返回当前的状态树对象。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 redux 中使用什么方法分发 action 对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 中分发 action 对象，可以使用 Redux 提供的 dispatch() 方法。dispatch() 方法是 Redux Store 对象中的一个函数，用于向 reducer 发送 action 对象，并触发 state 的更新。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>react-redux 这个库的作用是什么?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决 redux 状态更新组件不更新的问题</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>简要描述 react-redux 中提供的 connect 方法的作用及用法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">react-redux 提供了 connect 方法让组件获取状态</span><br><span class="line"></span><br><span class="line">connect 方法有两个参数都是函数, 第一个函数用于将 redux 状态映射到组件的 props 对象中</span><br><span class="line">第二个函数用于将修改状态的逻辑映射到组件的 props 对象中</span><br><span class="line">connect 方法在调用之后又返回一个函数, 通过调用该函数告诉 redux 状态及修改状态的逻辑要映射到哪一个组件中</span><br><span class="line">connect 方法返回的方法在调用之后返回了一个被增强了的组件, 外部要渲染该组件</span><br><span class="line"></span><br><span class="line">export default connect(mapStateToProps, mapDispatchToProps)(App)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为什么要将 action 对象中的 type 属性值定义为常量 <font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 中，将 action 对象中的 type 属性值定义为常量，可以提高应用的可维护性和可重用性。</span><br><span class="line"></span><br><span class="line">具体来说，将 action 类型定义为常量，可以避免由于手误或代码错误而导致的拼写错误，从而避免出现难以追踪的 bug。此外，常量还可以更好地传达代码中的含义，从而提高代码的可读性和可维护性。</span><br><span class="line"></span><br><span class="line">另外，定义 action 类型为常量还可以增加代码的重用性。在 Redux 应用中，可能有多个 reducer 需要处理相同的 action 类型，如果将 action 类型定义为常量，可以将这些常量集中到一个文件中，然后在多个 reducer 中重复使用，从而减少重复的代码。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reducer 函数为什么要被分解再组合<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">在 Redux 应用中，reducer 函数被分解再组合可以提高应用的可维护性和可扩展性。</span><br><span class="line"></span><br><span class="line">具体来说，将 reducer 函数分解成多个小的 reducer 函数，可以将不同部分的状态分开管理，从而使代码更加清晰和易于维护。</span><br><span class="line">Redux 提供了 combineReducers() 函数，它可以将多个 reducer 函数合并成一个 reducer 函数，并生成一个新的状态树对象。这样，我们可以将不同部分的状态分开管理，并将它们组合成一个完整的状态树，从而使代码更加清晰、易于维护和可扩展。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何理解 redux 中间件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redux 中间件允许开发者在修改状态的过程中加入一些中间环节, 在 reducer 函数中不能做的事情, 全部都要在中间件中去做</span><br><span class="line">比如异步请求、定时器、控制台输出、DOM 操作、localStorage</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>redux-thunk 中间件的作用是什么, 如何使用该中间件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">扩展了 dispatch 方法的功能, 使 dispatch 方法可以接收函数作为参数, 开发者可以将副作用代码写在该函数中, 比如异步请求,</span><br><span class="line">其实就是让开发者在 redux 的工作流程中加入异步代码.</span><br><span class="line"></span><br><span class="line">npm install redux-thunk</span><br><span class="line"></span><br><span class="line">import thunk from &quot;redux-thunk&quot;;</span><br><span class="line"></span><br><span class="line">createStore(reducer, applyMiddleware(thunk));</span><br><span class="line"></span><br><span class="line">dispatch(async (dispatch) =&gt; &#123;</span><br><span class="line">	// 异步操作</span><br><span class="line">	dispatch();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>BrowserRouter 内部使用的是什么 API 实现的路由功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在 React Router 库中，BrowserRouter 使用 HTML5 的 history API 实现了路由功能。</span><br><span class="line"></span><br><span class="line">history API 是 HTML5 中引入的一组 API，用于在浏览器中操作浏览器的历史记录和地址栏。使用 history API，我们可以通过 JavaScript 修改 URL，同时还可以监听 URL 的变化，从而实现前端路由功能。</span><br><span class="line"></span><br><span class="line">BrowserRouter 组件使用了 history API 中的 pushState() 和 replaceState() 方法，将 URL 中的路径与组件进行匹配，以确定要渲染的组件。当 URL 发生变化时，BrowserRouter 会通过 props 将新的 location 信息传递给子组件，从而触发重新渲染。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 react-router-dom 路由库中使用什么组件配置路由规则, 使用的是什么属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&quot;/home&quot; component=&#123;Home&#125; /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用哪些组件可以实现 a 链接跳转? 它们之间有什么区别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link&gt;&lt;/Link&gt;</span><br><span class="line">&lt;NavLink&gt;&lt;/NavLink&gt;</span><br><span class="line"></span><br><span class="line">NavLink 链接被激活之后有高亮的类名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用哪些方法可以实现编程式导航? 它们之间有什么区别</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">push      正常跳转, 记录会被添加到浏览器的历史记录中, 可以回退</span><br><span class="line">replace   跳转, 但是跳转记录不会被添加到浏览器的历史记录中, 不可以回退</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是查询参数？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查询参数是指 URL 中的一部分，通常用于向服务器传递额外的信息。查询参数以 &quot;?&quot; 符号开始，后面是一系列键值对，多个键值对之间使用 &quot;&amp;&quot; 符号分隔。</span><br><span class="line">https://www.example.com/search?q=react&amp;lang=en</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何传递查询参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Link to=&quot;/detail?aid=1&quot;&gt;&lt;/Link&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何接收查询参数<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qs.parse(this.props.location.search, &#123;ignoreQueryPrefix: true&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何实现路径参数的路由传参</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1. 在路由规则中指定要进入到当前路由需要传递参数</span><br><span class="line"></span><br><span class="line">		&lt;Route path=&quot;/detail/:id&quot; /&gt;</span><br><span class="line"></span><br><span class="line">2. 在链接中传递参数</span><br><span class="line"></span><br><span class="line">		&lt;Link to=&quot;/detail/1&quot;&gt;&lt;/Link&gt;</span><br><span class="line"></span><br><span class="line">3. 接收参数</span><br><span class="line"></span><br><span class="line">		match.params</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Switch 组件的作用是什么</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">默认情况下, 路由规则是从上到下进行匹配的, 直到匹配完所有的路由规则, 匹配到哪些, 就渲染哪些路由规则对应的组件</span><br><span class="line">Switch 组件可以指定在匹配到一个规则以后停止匹配</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在路由规则中匹配请求路径时, 它的匹配方式模式有哪些?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">精确匹配: 路由规则和请求路径完全吻合才能匹配成功, 要启用精确匹配, 需要 Route 组件的身上添加 exact 属性</span><br><span class="line"></span><br><span class="line">模糊匹配(默认行为): 只要路由规则被请求路径所包裹即可匹配成功 /home =&gt; / 、 /home</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在路由规则中如何定义 404 页面组件对应的路由规则.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">路由规则从上到下依次进行匹配, 如果所有的路由规则都没有匹配成功, 就让它匹配最后一条</span><br><span class="line"></span><br><span class="line">&lt;Route component=&#123;NotFound&#125;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何在普通组件中获取路由相关的信息.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">withRouter</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>路由守卫组件的作用是什么.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对路由组件进行的保护, 在进入组件之前, 判断你可以不以进入, 如果可以就让你进， 否则就不让你进.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>路由组件懒加载有什么好处? 如何实现路由组件懒加载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">提升首页加载速度.</span><br><span class="line"></span><br><span class="line">lazy Suspense</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何在 JSX 中通过组件的方式进行页面跳转.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Redirect to=&quot;&quot;/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React 中的 render()的用途是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在class组件中使用Render()，来返回在组件中显示的HTML。 它被用作读取props和state并将JSX代码返回到应用的根组件。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是 Props？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Props也被称作属性。它们将数据从一个组件传递到另一个组件（从父组件到子组件）。它们通常被用来呈现动态数据。</span><br><span class="line">子组件永远不能将props发送到父组件，因为此流程是单向的（父到子）。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何区分 State 和 Props</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">State和props是具有不同功能的JavaScript对象。</span><br><span class="line"></span><br><span class="line">props用于将数据从父组件传输到子组件，而state是对本地数据的存储，仅对当前组件可用，不能与其他组件共享。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>useState 是什么？<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useState Hook是一个可以在函数组件中使用状态变量的存储。你可以把初始状态传给这个函数，它将返回一个包含当前状态值（不一定是初始状态）的变量和另一个更新这个值的函数。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>useEffect 是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">useEffect Hook允许你在组件中执行副作用，例如数据获取、直接更新DOM、使用setTimeout()之类的计时器等等。</span><br><span class="line"></span><br><span class="line">这个hook接受两个参数：回调函数和依赖项，它们允许您控制何时执行副作用。</span><br><span class="line"></span><br><span class="line">注意：第二个参数是可选的。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>useMemo() hook 的用途是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useMemo() hook在函数组件中使用来记忆昂贵的函数，以便它们仅在设定的输入更改时调用，而不是每次渲染都调用。</span><br><span class="line">它类似于useCallback hook，用于优化React函数组件的渲染行为。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React 的功能是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.它使用虚拟DOM而不是真实DOM。</span><br><span class="line">2.它使用服务器端渲染。</span><br><span class="line">3.它遵循单向数据流或数据绑定。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出 React 的一些主要优点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">它提高了应用程序的性能</span><br><span class="line">它可以方便地在客户端和服务器端使用</span><br><span class="line">由于有了JSX，代码的可读性提高了</span><br><span class="line">React易于与其他框架（如Meteor，Angular等）集成</span><br><span class="line">使用React，编写UI测试用例变得非常容易</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对 Virtual DOM 有什么了解？解释它的工作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">虚拟DOM是轻量级的JavaScript对象，其最初只是真实DOM的副本。 它是一个节点树，列出了元素，它们的属性和内容作为对象及其属性。React的render函数从React组件中创建一个节点树。然后，它会响应由用户或系统执行的各种操作引起的数据模型中的突变来更新此树。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>state 和 props 有何区别？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">定义位置不同：state 是在组件内部定义的，而 props 是从组件的父组件传递进来的。</span><br><span class="line"></span><br><span class="line">可变性不同：state 是组件的内部状态，可以通过调用 setState() 方法来更新它的值，而 props 是从父组件传递进来的，通常是不可变的。</span><br><span class="line"></span><br><span class="line">作用不同：state 用于存储组件的数据和状态，可以用来更新组件的视图。props 则用于从父组件向子组件传递数据和方法，用于子组件的渲染。</span><br><span class="line"></span><br><span class="line">访问方式不同：在组件内部可以通过 this.state 来访问组件的 state 值，而在组件内部可以通过 this.props 来访问父组件传递给子组件的 props 值。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是高阶组件？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">高阶组件是重用组件逻辑的高级方法。基本上，这是从React的组成性质衍生的模式。HOC是自定义组件，在其中包裹了另一个组件。他们可以接受任何动态提供的子组件，但不会修改或复制其输入组件中的任何行为。您可以说HOC是“纯”组件。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Redux 遵循的三个原则是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.单一事实来源：整个应用程序的状态存储在单个存储中的对象/状态树中。单一状态树使跟踪随时间变化以及调试或检查应用程序变得更加容易。</span><br><span class="line">2.状态是只读的：更改状态的唯一方法是触发操作。动作是描述更改的普通JS对象。就像状态是数据的最小表示一样，操作是数据更改的最小表示。</span><br><span class="line">3.使用纯函数进行更改： 为了指定操作如何转换状态树，您需要纯函数。纯函数是那些返回值仅取决于其参数值的函数。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对 React refs 的理解？应用场景？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">在 React 中，Refs 是一种允许我们访问 DOM 节点或者组件实例的方法。Refs 提供了一种方式，允许我们直接操作 DOM 节点或组件实例，而无需经过 React 的 Virtual DOM。</span><br><span class="line"></span><br><span class="line">Refs 的主要作用是解决访问组件内部 DOM 节点的问题。在 React 中，由于组件的渲染是通过 Virtual DOM 实现的，因此在某些情况下需要直接访问组件内部的 DOM 节点，比如进行动画效果、获取输入框的值等等。</span><br><span class="line"></span><br><span class="line">应用场景：</span><br><span class="line"></span><br><span class="line">获取组件内部的 DOM 节点，比如获取表单元素的值、滚动条的位置等。</span><br><span class="line"></span><br><span class="line">与第三方库或原生 API 集成，比如集成 Google 地图、视频播放器等，需要访问 DOM 节点或组件实例。</span><br><span class="line"></span><br><span class="line">控制组件的生命周期，比如手动触发组件的某些生命周期函数。</span><br><span class="line"></span><br><span class="line">处理焦点、选择等问题，比如实现自动聚焦、选中文本等。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React-Router 的路由模式有哪些？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BrowserRouter：基于 HTML5 的 History API，使用 HTML5 中的 pushState() 和 replaceState() 方法来实现路由跳转。</span><br><span class="line"></span><br><span class="line">HashRouter：使用 URL 中的哈希值来实现路由跳转，这是一种旧的路由实现方式。</span><br><span class="line"></span><br><span class="line">MemoryRouter：使用内存中的 history 实现路由跳转，不会改变 URL。</span><br><span class="line"></span><br><span class="line">StaticRouter：用于服务器端渲染，通过将 URL 作为 props 传递给组件来实现路由跳转。</span><br><span class="line"></span><br><span class="line">NativeRouter：用于 React Native 开发，提供了与 React Native 导航 API 一致的路由实现方式。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>React 中的 key 有什么作用？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">跟Vue一样，React 也存在 Diff算法，而元素key属性的作用是用于判断元素是新创建的还是被移动的元素，从而减少不必要的Diff</span><br><span class="line"></span><br><span class="line">因此key的值需要为每一个元素赋予一个确定的标识</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置 key 的注意事项有哪些？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">key 应该是唯一的</span><br><span class="line">key不要使用随机值（随机数在下一次 render 时，会重新生成一个数字）</span><br><span class="line">避免使用 index 作为 key</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是 HTTP?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HTTP（Hypertext Transfer Protocol）是一种用于传输超文本的协议。它是 Web 的基础，用于客户端和服务器之间的通信，客户端通过 HTTP 请求获取 Web 页面或资源，服务器通过 HTTP 响应返回 Web 页面或资源。</span><br><span class="line">HTTP 通常使用 TCP（Transmission Control Protocol）作为传输协议，在传输层之上实现了一个面向请求和响应的客户端和服务器之间的通信。HTTP 请求由客户端发起，包含请求方法、URL、HTTP 版本号、请求头和请求正文等信息；HTTP 响应由服务器返回，包含响应状态码、响应头和响应正文等信息。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是 HTTPS？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTPS（Hypertext Transfer Protocol Secure）是基于 HTTP 协议的安全版本，它使用了 SSL/TLS 加密协议来保护数据传输的安全性和完整性。HTTPS 通过 SSL/TLS 协议对通信进行加密，可以防止数据在传输过程中被窃听和篡改。 HTTPS 的 URL 以 &quot;https://&quot; 开头，常用于传输敏感信息的 Web 应用，比如银行、电商等。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTTP 和 HTTPS 的区别?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安全性：HTTP 不加密，数据传输容易被窃听和篡改；HTTPS 使用 SSL/TLS 加密协议，保证数据传输的安全性和完整性。</span><br><span class="line"></span><br><span class="line">端口号：HTTP 默认使用端口号 80，HTTPS 默认使用端口号 443。</span><br><span class="line"></span><br><span class="line">证书：HTTPS 需要使用 SSL/TLS 数字证书，用于验证服务器的身份和建立安全通道；而 HTTP 不需要证书。</span><br><span class="line"></span><br><span class="line">性能：HTTPS 比 HTTP 的传输速度慢，因为 HTTPS 需要进行加密和解密操作，增加了服务器的负担和网络延迟。</span><br><span class="line"></span><br><span class="line">SEO：HTTPS 可以提升网站的搜索引擎排名，因为谷歌等搜索引擎将 HTTPS 作为一个排名因素。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为什么说 HTTPS 比 HTTP 安全?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTPS 比 HTTP 更安全，主要是因为 HTTPS 在数据传输的过程中使用了 SSL/TLS 协议来加密和验证数据的完整性，从而保证了数据的安全性和完整性。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTTPS 是如何保证安全的？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">加密通信：HTTPS 使用 SSL/TLS 协议对通信过程进行加密，防止数据在传输过程中被窃听和篡改。SSL/TLS 协议通过使用公钥和私钥来建立安全通道，加密传输数据。</span><br><span class="line"></span><br><span class="line">身份验证：HTTPS 使用 SSL/TLS 数字证书对服务器和客户端进行身份验证，防止中间人攻击。SSL/TLS 数字证书是由受信任的第三方机构颁发的，用于验证服务器的身份和建立安全通道。</span><br><span class="line"></span><br><span class="line">数据完整性：HTTPS 使用消息摘要算法对传输的数据进行验证，保证数据的完整性，防止数据在传输过程中被篡改。消息摘要算法使用哈希函数将原始数据转换成固定长度的摘要值，然后将摘要值发送给接收方进行验证，如果验证失败，则说明数据已经被篡改。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何理解 UDP 和 TCP? 区别?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">UDP（User Datagram Protocol）和 TCP（Transmission Control Protocol）都是用于在网络中传输数据的协议</span><br><span class="line">连接性：TCP 是一种面向连接的协议，而 UDP 是一种无连接的协议。TCP 在传输数据之前需要先建立连接，而 UDP 不需要建立连接。</span><br><span class="line"></span><br><span class="line">可靠性：TCP 是一种可靠的协议，它通过确认和重传机制来保证数据传输的可靠性。UDP 是一种不可靠的协议，它不提供数据重传机制。</span><br><span class="line"></span><br><span class="line">消息大小限制：TCP 没有消息大小的限制，而 UDP 的消息大小被限制在 65,507 个字节以内。</span><br><span class="line"></span><br><span class="line">传输效率：由于 TCP 需要建立连接、确认和重传数据等机制，因此其传输效率相对较低。而 UDP 没有这些机制，因此其传输效率相对较高。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>DNS 协议 是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DNS（Domain Names System），域名系统，是互联网一项服务，是进行域名和与之相对应的 IP 地址进行转换的服务器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说 DNS 完整的查询过程?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">首先搜索浏览器的 DNS 缓存，缓存中维护一张域名与 IP 地址的对应表</span><br><span class="line"></span><br><span class="line">若没有命中，则继续搜索操作系统的 DNS 缓存</span><br><span class="line"></span><br><span class="line">若仍然没有命中，则操作系统将域名发送至本地域名服务器，本地域名服务器采用递归查询自己的 DNS 缓存，查找成功则返回结果</span><br><span class="line"></span><br><span class="line">若本地域名服务器的 DNS 缓存没有命中，则本地域名服务器向上级域名服务器进行迭代查询</span><br><span class="line"></span><br><span class="line">首先本地域名服务器向根域名服务器发起请求，根域名服务器返回顶级域名服务器的地址给本地服务器</span><br><span class="line">本地域名服务器拿到这个顶级域名服务器的地址后，就向其发起请求，获取权限域名服务器的地址</span><br><span class="line">本地域名服务器根据权限域名服务器的地址向其发起请求，最终得到该域名对应的 IP 地址</span><br><span class="line">本地域名服务器将得到的 IP 地址返回给操作系统，同时自己将 IP 地址缓存起来</span><br><span class="line"></span><br><span class="line">操作系统将 IP 地址返回给浏览器，同时自己也将 IP 地址缓存起</span><br><span class="line"></span><br><span class="line">至此，浏览器就得到了域名对应的 IP 地址，并将 IP 地址缓存起</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说地址栏输入 URL 敲下回车后发生了什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">URL解析</span><br><span class="line">DNS 查询</span><br><span class="line">TCP 连接</span><br><span class="line">HTTP 请求</span><br><span class="line">响应请求</span><br><span class="line">页面渲染</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说 HTTP1.0&#x2F;1.1&#x2F;2.0 的区别?<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HTTP1.0：</span><br><span class="line"></span><br><span class="line">浏览器与服务器只保持短暂的连接，浏览器的每次请求都需要与服务器建立一个TCP连接</span><br><span class="line">HTTP1.1：</span><br><span class="line"></span><br><span class="line">引入了持久连接，即TCP连接默认不关闭，可以被多个请求复用</span><br><span class="line">在同一个TCP连接里面，客户端可以同时发送多个请求</span><br><span class="line">虽然允许复用TCP连接，但是同一个TCP连接里面，所有的数据通信是按次序进行的，服务器只有处理完一个请求，才会接着处理下一个请求。如果前面的处理特别慢，后面就会有许多请求排队等着</span><br><span class="line">新增了一些请求方法</span><br><span class="line">新增了一些请求头和响应头</span><br><span class="line">HTTP2.0：</span><br><span class="line"></span><br><span class="line">采用二进制格式而非文本格式</span><br><span class="line">完全多路复用，而非有序并阻塞的、只需一个连接即可实现并行</span><br><span class="line">使用报头压缩，降低开销</span><br><span class="line">服务器推送</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说 HTTP 常见的状态码有哪些，适用场景？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1 表示消息</span><br><span class="line">2 表示成功</span><br><span class="line">3 表示重定向</span><br><span class="line">4 表示请求错误</span><br><span class="line">5 表示服务器错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">100：客户端在发送POST数据给服务器前，征询服务器情况，看服务器是否处理POST的数据，如果不处理，客户端则不上传POST数据，如果处理，则POST上传数据。常用于POST大数据传输</span><br><span class="line"></span><br><span class="line">206：一般用来做断点续传，或者是视频文件等大文件的加载</span><br><span class="line"></span><br><span class="line">301：永久重定向会缓存。新域名替换旧域名，旧的域名不再使用时，用户访问旧域名时用301就重定向到新的域名</span><br><span class="line"></span><br><span class="line">302：临时重定向不会缓存，常用 于未登陆的用户访问用户中心重定向到登录页面</span><br><span class="line"></span><br><span class="line">304：协商缓存，告诉客户端有缓存，直接使用缓存中的数据，返回页面的只有头部信息，是没有内容部分</span><br><span class="line"></span><br><span class="line">400：参数有误，请求无法被服务器识别</span><br><span class="line"></span><br><span class="line">403：告诉客户端进制访问该站点或者资源，如在外网环境下，然后访问只有内网IP才能访问的时候则返回</span><br><span class="line"></span><br><span class="line">404：服务器找不到资源时，或者服务器拒绝请求又不想说明理由时</span><br><span class="line"></span><br><span class="line">503：服务器停机维护时，主动用503响应请求或 nginx 设置限速，超过限速，会返回503</span><br><span class="line"></span><br><span class="line">504：网关超时</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说一下 GET 和 POST 的区别？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">GET在浏览器回退时是无害的，而POST会再次提交请求。</span><br><span class="line">GET产生的URL地址可以被Bookmark，而POST不可以。</span><br><span class="line">GET请求会被浏览器主动cache，而POST不会，除非手动设置。</span><br><span class="line">GET请求只能进行url编码，而POST支持多种编码方式。</span><br><span class="line">GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</span><br><span class="line">GET请求在URL中传送的参数是有长度限制的，而POST没有。</span><br><span class="line">对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</span><br><span class="line">GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</span><br><span class="line">GET参数通过URL传递，POST放在Request body中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>常用的版本管理工具有哪些？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git   SVN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>谈谈你对 git 的理解。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git是一个分布式版本控制软件，最初目的是为更好地管理Linux内核开发而设计</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git 常见的命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git add</span><br><span class="line">git commit</span><br><span class="line">git push</span><br><span class="line">git pull</span><br><span class="line">git clone</span><br><span class="line">git checkout</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说 Git 中 fork, clone,branch 这三个概念，有什么区别?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fork 只能对代码仓进行操作，且 fork 不属于 git 的命令，通常用于代码仓托管平台的一种“操作”</span><br><span class="line">clone 是 git 的一种命令，它的作用是将文件从远程代码仓下载到本地，从而形成一个本地代码仓</span><br><span class="line">branch 特征与 fork 很类似，fork 得到的是一个新的、自己的代码仓，而 branch 得到的是一个代码仓的一个新分支</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说对 git pull 和 git fetch 的理解？有什么区别？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git fetch 命令用于从另一个存储库下载对象和引用</span><br><span class="line">git pull 命令用于从另一个存储库或本地分支获取并集成(整合)</span><br><span class="line"></span><br><span class="line">相同点：</span><br><span class="line"></span><br><span class="line">在作用上他们的功能是大致相同的，都是起到了更新代码的作用</span><br><span class="line">不同点：</span><br><span class="line"></span><br><span class="line">git pull是相当于从远程仓库获取最新版本，然后再与本地分支merge，即git pull = git fetch + git merge</span><br><span class="line">相比起来，git fetch 更安全也更符合实际要求，在 merge 前，我们可以查看更新情况，根据实际情况再决定是否合并</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何解决 git 冲突？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">当Git无法自动合并分支时，就必须首先解决冲突，解决冲突后，再提交，合并完成</span><br><span class="line"></span><br><span class="line">解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>说说 git 发生冲突的场景？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一般情况下，出现分支的场景有如下：</span><br><span class="line"></span><br><span class="line">多个分支代码合并到一个分支时</span><br><span class="line">多个分支向同一个远端分支推送</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git reset 干什么的？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reset用于回退版本，可以遗弃不再使用的提交</span><br><span class="line"></span><br><span class="line">执行遗弃时，需要根据影响的范围而指定不同的参数，可以指定是否复原索引或工作树内容</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git revert 是干什么的？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">跟git reset用法基本一致，git revert 撤销某次操作，此次操作之前和之后的 commit和history都会保留，并且把这次撤销，作为一次最新的提交</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>get reset 和 git revert 的区别<font color="white">20qz-pylcc</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit</span><br><span class="line">git reset 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容</span><br><span class="line">在回滚这一操作上看，效果差不多。但是在日后继续 merge 以前的老版本时有区别</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当你开发到一半，现在要修改别的分支问题的时候，怎么处理？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">可以使用git stash缓存当前区域的代码</span><br><span class="line"></span><br><span class="line">git stash：保存开发到一半的代码</span><br><span class="line">git commit -m &#x27;修改问题&#x27;</span><br><span class="line">git stash pop：将代码追加到最新的提交之后</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%BF%85%E9%97%AE%E5%9F%BA%E7%A1%80/">前端必问基础</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Html/html%E5%9F%BA%E7%A1%80/">HTML基础</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/mistbollon">GitHub</a></div><div class="sitemap-group"><span class="fs14">项目</span><a target="_blank" rel="noopener" href="https://github.com/mistbollon?tab=repositories">开源库</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+<!-- hexo injector body_end start -->
+  <style>
+    .highlight {
+      position: relative;
+    }
+    .highlight .code .copy-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 0.5rem;
+      opacity: 0.25;
+      font-weight: 700;
+      color: var(--theme);
+      cursor: pointer;
+      transination: opacity 0.3s;
+    }
+    .highlight .code .copy-btn:hover{
+      color: var(--text-code);
+      opacity: 0.75;
+    }
+    .highlight .code .copy-btn.success {
+      color: var(--swiper-theme-color);
+      opacity: 0.75;
+
+    }
+    
+  </style>
+  <script>
+    const codeElementArr = document.querySelectorAll('.code')
+    codeElementArr.forEach(code => {
+      const codeBeforeWidth = window.getComputedStyle(code, '::before').width.split('px')[0]
+      const codeBeforePadding = window.getComputedStyle(code, '::before').padding.split(' ').pop().split('px')[0]
+  
+      // copy btn 
+      const codeCopyBtn = document.createElement('div')
+      codeCopyBtn.classList.add('copy-btn')
+      codeCopyBtn.style.right = Number(codeBeforeWidth) + Number(codeBeforePadding) * 2 + 'px'
+      codeCopyBtn.innerText = 'copy'
+      code.appendChild(codeCopyBtn)
+  
+      codeCopyBtn.addEventListener('click', async () => {
+        const currentCodeElement = code.children[0]?.innerText
+        await copyCode(currentCodeElement)
+
+
+        codeCopyBtn.innerText = 'copied'
+        codeCopyBtn.classList.add('success')
+
+        setTimeout(() => {
+          codeCopyBtn.innerText = 'copy'
+          codeCopyBtn.classList.remove('success')
+        },1000)
+      })
+    })
+    
+    async function copyCode(currentCode) {
+      console.log(currentCode)
+      console.log('copy')
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(currentCode)
+        } catch (error) {
+          // 未获得用户许可
+          console.error(error)
+        }
+      } else {
+        console.error('当前浏览器不支持此api')
+      }
+    }
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
