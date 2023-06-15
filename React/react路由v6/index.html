@@ -30,8 +30,8 @@
 <meta property="og:site_name" content="GuoPeng Blog">
 <meta property="og:description" content="React 路由[V6]1.集成应用1234&#x2F;&#x2F;创建应用create-react-app 项目名&#x2F;&#x2F;安装路由库npm install react-router-dom@6.4.3  项目中应用 1234567891011121314&#x2F;&#x2F; src&#x2F;index.jsimport React from &quot;react&quot;;import ReactDOM from &quot;react-">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-24T13:08:57.705Z">
-<meta property="article:modified_time" content="2023-04-24T13:25:16.501Z">
+<meta property="article:published_time" content="2021-09-05T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-15T01:42:48.579Z">
 <meta property="article:author" content="陈国朋">
 <meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/React%E4%BD%BF%E7%94%A8/">React使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-04-24T13:08:57.705Z">2023-04-24</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/React%E4%BD%BF%E7%94%A8/">React使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-09-05T00:00:00.000Z">2021-09-05</time></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>React路由[V6]</span></h1>
@@ -114,7 +114,7 @@
 <h5 id="3-嵌套路由"><a href="#3-嵌套路由" class="headerlink" title="3.嵌套路由"></a>3.嵌套路由</h5><p><strong>使一级路由和二级路由关联</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="title function_">createBrowserRouter</span>([</span><br><span class="line">  <span class="comment">// 当用户在浏览器中访问 /news 路径时, 渲染 &lt;NewsPage /&gt; 组件</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/news&quot;</span>,</span><br><span class="line">    <span class="attr">element</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">NewsPage</span> /&gt;</span></span>,</span><br><span class="line">    <span class="attr">children</span>: [</span><br><span class="line">      <span class="comment">// 当用户在浏览器中访问 /news/company 路径时, 将 &lt;CompanyNewsPage /&gt; 组件渲染到 &lt;NewsPage /&gt; 组件中</span></span><br><span class="line">      &#123; <span class="attr">path</span>: <span class="string">&quot;company&quot;</span>, <span class="attr">element</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">CompanyNewsPage</span> /&gt;</span></span> &#125;,</span><br><span class="line">      <span class="comment">// 当用户在浏览器中访问 /news/industry 路径时, 将 &lt;IndustryNewsPage /&gt; 组件渲染到 &lt;NewsPage /&gt; 组件中</span></span><br><span class="line">      &#123; <span class="attr">path</span>: <span class="string">&quot;industry&quot;</span>, <span class="attr">element</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">IndustryNewsPage</span> /&gt;</span></span> &#125;,</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
 
-<p><strong>在一级路由页面添加占位符(<Outlet />)给子级路由渲染位置</strong></p>
+<p><strong>在一级路由页面添加占位符(<Outlet>)给子级路由渲染位置</Outlet></strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// src/pages/news/index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Outlet</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">NewsPage</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 子路由页面组件将会被渲染到占位符组件所在的位置</span></span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Outlet</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="4-导航链接"><a href="#4-导航链接" class="headerlink" title="4.导航链接"></a>4.导航链接</h5><p>使用 react 提供的 Link 组件实现路由跳转,</p>
@@ -139,7 +139,7 @@
 <p><strong>03.获取路由参数</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取路由查询参数操作对象</span></span><br><span class="line"><span class="keyword">const</span> [searchParams] = <span class="title function_">useSearchParams</span>();</span><br><span class="line"><span class="comment">// 获取路由参数 returnUrl 的值</span></span><br><span class="line"><span class="keyword">const</span> returnUrl = searchParams.<span class="title function_">get</span>(<span class="string">&quot;returnUrl&quot;</span>);</span><br></pre></td></tr></table></figure>
 
-<h5 id="7-页面跳转回到顶部"><a href="#7-页面跳转回到顶部" class="headerlink" title="7.页面跳转回到顶部"></a>7.页面跳转回到顶部</h5><p><strong>01.页面在进行跳转时滚动的位置不会回滚到顶部</strong><br>使用 react 提供的<ScrollRestoration/>组件可以在跳转的页面实现页面回滚到顶部</p>
+<h5 id="7-页面跳转回到顶部"><a href="#7-页面跳转回到顶部" class="headerlink" title="7.页面跳转回到顶部"></a>7.页面跳转回到顶部</h5><p><strong>01.页面在进行跳转时滚动的位置不会回滚到顶部</strong><br>使用 react 提供的<ScrollRestoration>组件可以在跳转的页面实现页面回滚到顶部</ScrollRestoration></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ScrollRestoration</span> &#125; <span class="keyword">from</span> <span class="string">&quot;react-router-dom&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">Layout</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">ScrollRestoration</span> /&gt;</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>02.阻止回滚到顶部</strong><br>通过 Link 组件的 preventScrollReset 选项阻止滚动恢复</p>
@@ -163,7 +163,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Html/html%E5%9F%BA%E7%A1%80/">HTML基础</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/React/ReduxToolkit%E5%85%A8%E5%B1%80%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">ReduxToolkit全局状态管理</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Vue/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">Vue基础概念</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Html/html%E5%9F%BA%E7%A1%80/">HTML基础</a></div></section></div>
 
 
 

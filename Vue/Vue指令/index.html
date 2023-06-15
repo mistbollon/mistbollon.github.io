@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Vue指令v-指令名 - GuoPeng Blog</title>
+
+  
+    <meta name="description" content="一、指令修饰符1.v-on 指令修饰符 作用：v-on 基于在 vue 程序中绑定事件  语法：&lt;div v-on:事件名称&#x3D;&quot;事件处理函数|js表达式&quot;&gt;&lt;&#x2F;div&gt;简写: 使用@代替v-on，@事件名称&#x3D;“事件处理函数|js表达式”  修饰符： ———- 事件.修饰符名称  语法: @事件名.修饰符&#x3D;“methods 里函数” .stop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue指令v-指令名">
+<meta property="og:url" content="http://example.com/Vue/Vue%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="GuoPeng Blog">
+<meta property="og:description" content="一、指令修饰符1.v-on 指令修饰符 作用：v-on 基于在 vue 程序中绑定事件  语法：&lt;div v-on:事件名称&#x3D;&quot;事件处理函数|js表达式&quot;&gt;&lt;&#x2F;div&gt;简写: 使用@代替v-on，@事件名称&#x3D;“事件处理函数|js表达式”  修饰符： ———- 事件.修饰符名称  语法: @事件名.修饰符&#x3D;“methods 里函数” .stop">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-15T01:43:29.949Z">
+<meta property="article:author" content="陈国朋">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/snow-leopard.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">GuoPeng</div><div class="sub normal cap">欢迎来到我的博客</div><div class="sub hover cap" style="opacity:0"> 淡泊明志</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">笔记</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/about/">关于</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Vue指令v-指令名</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">一、指令修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-v-on-%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">1.v-on 指令修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-v-bind-%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">2.v-bind 指令修饰符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-v-model-%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-text">3.v-model 指令修饰符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-text">二、常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-v-bind"><span class="toc-text">1.v-bind</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-v-for"><span class="toc-text">2.v-for</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-v-on"><span class="toc-text">3.v-on</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-v-if-x2F-e-else-if-x2F-v-else"><span class="toc-text">4.v-if&#x2F;e-else-if&#x2F;v-else</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-v-show"><span class="toc-text">5.v-show</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-v-model"><span class="toc-text">6.v-model</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-v-slot"><span class="toc-text">7.v-slot</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-v-memo%EF%BC%88V3-%E6%96%B0%E5%A2%9E%EF%BC%89"><span class="toc-text">8.v-memo（V3 新增）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%8D%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="toc-text">三、不常用指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-v-html"><span class="toc-text">1.v-html</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-v-text"><span class="toc-text">2.v-text</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-v-once"><span class="toc-text">3.v-once</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-v-pre"><span class="toc-text">4.v-pre</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-v-cloak"><span class="toc-text">5.v-cloak</span></a></li></ol></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Vue%E4%BD%BF%E7%94%A8/">Vue使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-09-11T00:00:00.000Z">2021-09-11</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Vue指令v-指令名</span></h1>
+<h3 id="一、指令修饰符"><a href="#一、指令修饰符" class="headerlink" title="一、指令修饰符"></a>一、指令修饰符</h3><h4 id="1-v-on-指令修饰符"><a href="#1-v-on-指令修饰符" class="headerlink" title="1.v-on 指令修饰符"></a>1.v-on 指令修饰符</h4><ul>
+<li><p><strong>作用</strong>：v-on 基于在 vue 程序中绑定事件</p>
+</li>
+<li><p><strong>语法</strong>：<code>&lt;div v-on:事件名称=&quot;事件处理函数|js表达式&quot;&gt;&lt;/div&gt;</code><br>简写: 使用<code>@</code>代替<code>v-on</code>，<code>@事件名称=“事件处理函数|js表达式”</code></p>
+</li>
+<li><p><strong>修饰符</strong>： ———- 事件.修饰符名称</p>
+<ul>
+<li>语法:<ul>
+<li>@事件名.修饰符&#x3D;“methods 里函数”</li>
+<li>.stop - 阻止事件冒泡</li>
+<li>.prevent - 阻止默认行为</li>
+<li>.once - 程序运行期间, 只触发一次事件处理函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>按键修饰符：</strong></p>
+<ul>
+<li>@keyup.enter-检测回车按钮</li>
+<li>@keyup.esc-检测返回按钮</li>
+</ul>
+</li>
+<li><p><strong>代码</strong>：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 点击按钮的时候，修改isShow数据的值即可 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- v-on:事件名称=&quot;事件处理函数|js表达式&quot; --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- js表达式 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- &lt;button v-on:click=&quot;isShow=!isShow&quot;&gt;切换显示隐藏&lt;/button&gt; --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 绑定函数 --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- &lt;button v-on:click=&quot;toggleShow&quot;&gt;切换显示隐藏&lt;/button&gt; --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- v-on: 绑定事件略显麻烦，可以简写成@ --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;toggleShow&quot;</span>&gt;</span>切换显示隐藏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span>我是一个div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">isShow</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 声明一个函数</span></span></span><br><span class="line"><span class="language-javascript">          <span class="title function_">toggleShow</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">this</span>.<span class="property">isShow</span> = !<span class="variable language_">this</span>.<span class="property">isShow</span>;</span></span><br><span class="line"><span class="language-javascript">          &#125;,</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-v-bind-指令修饰符"><a href="#2-v-bind-指令修饰符" class="headerlink" title="2.v-bind 指令修饰符"></a>2.v-bind 指令修饰符</h4><ul>
+<li><p><strong>作用</strong>：动态绑定属性值</p>
+</li>
+<li><p><strong>语法</strong>：<code>&lt;div v-bind:标签属性名称=&quot;数据名称|js表达式&quot;&gt;&lt;/div&gt;</code></p>
+<p>简写： 使用 <code>:</code>代替<code>v-bind</code>，<code>:属性名=&quot;数据名称|js表达式&quot;</code></p>
+</li>
+<li><p><strong>修饰符</strong>：</p>
+<ul>
+<li>.sync 对 props 进行双向绑定，不能和表达式一起使用<code> v-bind:属性名称.sync</code>，Vue3 中移除</li>
+</ul>
+</li>
+<li><p><strong>代码</strong>：</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- v-bind:标签属性名称=&quot;数据名称|js表达式&quot; --&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- &lt;div v-bind:title=&quot;title&quot;&gt;我是一个DIV&lt;/div&gt; --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">&quot;title&quot;</span>&gt;</span>我是一个DIV<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;fn&quot;</span>&gt;</span>改title<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title</span>: <span class="string">&quot;abcd&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">this</span>.<span class="property">title</span> = <span class="string">&quot;1234&quot;</span>;</span></span><br><span class="line"><span class="language-javascript">          &#125;,</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-v-model-指令修饰符"><a href="#3-v-model-指令修饰符" class="headerlink" title="3.v-model 指令修饰符"></a>3.v-model 指令修饰符</h4><ul>
+<li><strong>作用：</strong>给表单元素扩展双向数据绑定功能</li>
+<li><strong>语法：</strong><code>&lt;div v-model=&quot;数据变量&quot;&gt;&lt;/div&gt;</code></li>
+<li><strong>修饰符</strong>：v-model.修饰符 &#x3D; “数据变量”<ul>
+<li><code>v-model.number </code>以 parseFloat 转为数字类型</li>
+<li><code>v-model.trim</code>去除首尾空白字符</li>
+<li><code>v-model.lazy</code>在 change 时触发而非 input</li>
+</ul>
+</li>
+<li><strong>代码</strong>：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;name&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span><br><span class="line">  &#123;&#123;name&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title function_">vue</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">el</span>: <span class="string">&quot;#app&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">name</span>: <span class="string">&quot;xxx&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二、常用指令"><a href="#二、常用指令" class="headerlink" title="二、常用指令"></a>二、常用指令</h3><h5 id="1-v-bind"><a href="#1-v-bind" class="headerlink" title="1.v-bind"></a>1.v-bind</h5><ul>
+<li>语法：<code>v-bind:xxx=&quot;xxx&quot;</code></li>
+<li>简写：:xxx&#x3D;”xxx”</li>
+<li>作用：单项数据绑定（为标签属性绑定动态值）</li>
+</ul>
+<h5 id="2-v-for"><a href="#2-v-for" class="headerlink" title="2.v-for"></a>2.v-for</h5><ul>
+<li>语法：<code>v-for=&quot;(item,index) in xxx&quot; :key=&quot;item.di&quot;</code><ul>
+<li>key 唯一值</li>
+</ul>
+</li>
+<li>作用：遍历列表进行渲染</li>
+</ul>
+<h5 id="3-v-on"><a href="#3-v-on" class="headerlink" title="3.v-on"></a>3.v-on</h5><ul>
+<li>语法：<code>v-on:事件名名称=&quot;事件回调函数&quot;</code></li>
+<li>简写：@事件名称&#x3D;”事件回调函数”</li>
+<li>作用：绑定事件</li>
+</ul>
+<h5 id="4-v-if-x2F-e-else-if-x2F-v-else"><a href="#4-v-if-x2F-e-else-if-x2F-v-else" class="headerlink" title="4.v-if&#x2F;e-else-if&#x2F;v-else"></a>4.v-if&#x2F;e-else-if&#x2F;v-else</h5><ul>
+<li>语法：<code>v-if=&quot;xxx&quot;</code></li>
+<li>作用：条件判断渲染（让元素显示或隐藏）</li>
+<li>在 vue3 中 v-if 和 v-fot 相比优先级更高，可以一起使用。在 vue2 中 v-for 更高，实际不能一起使用</li>
+</ul>
+<h5 id="5-v-show"><a href="#5-v-show" class="headerlink" title="5.v-show"></a>5.v-show</h5><ul>
+<li>语法：<code>v-show=&quot;xxx&quot;</code></li>
+<li>作用：条件渲染（让元素显示或隐藏）</li>
+<li>v-if 和 v-show 区别：<ul>
+<li>v-if 隐藏时会销毁元素</li>
+<li>v-show 是通过修改样式 display:none 进行隐藏</li>
+</ul>
+</li>
+</ul>
+<h5 id="6-v-model"><a href="#6-v-model" class="headerlink" title="6.v-model"></a>6.v-model</h5><ul>
+<li>语法：<code>v-model=&quot;xxx&quot;</code></li>
+<li>作用：进行双向数据绑定</li>
+</ul>
+<h5 id="7-v-slot"><a href="#7-v-slot" class="headerlink" title="7.v-slot"></a>7.v-slot</h5><ul>
+<li>语法：v-slot:xxx&#x2F;v-slot&#x3D;”{xxx}”&#x2F;v-slot:xxx&#x3D;”{xxx}”</li>
+<li>简写：#xxx #default&#x3D;”{xxx}” #xxx&#x3D;”{xxx}”</li>
+<li>作用：父子组件进行通信，通信标签数据</li>
+</ul>
+<h5 id="8-v-memo（V3-新增）"><a href="#8-v-memo（V3-新增）" class="headerlink" title="8.v-memo（V3 新增）"></a>8.v-memo（V3 新增）</h5><ul>
+<li>语法：<code>v-memo=&quot;[xxx]&quot;</code></li>
+<li>作用：用来缓存部分模板页面（DOM 元素）</li>
+</ul>
+<h3 id="三、不常用指令"><a href="#三、不常用指令" class="headerlink" title="三、不常用指令"></a>三、不常用指令</h3><h5 id="1-v-html"><a href="#1-v-html" class="headerlink" title="1.v-html"></a>1.v-html</h5><ul>
+<li>语法：<code>v-html=&quot;xxx&quot;</code></li>
+<li>作用：设置元素的 innerHTML</li>
+</ul>
+<h5 id="2-v-text"><a href="#2-v-text" class="headerlink" title="2.v-text"></a>2.v-text</h5><ul>
+<li>语法：v-text&#x3D;”xxx”</li>
+<li>作用：设置元素的 textContent</li>
+</ul>
+<h5 id="3-v-once"><a href="#3-v-once" class="headerlink" title="3.v-once"></a>3.v-once</h5><ul>
+<li>让模板解析一次</li>
+</ul>
+<h5 id="4-v-pre"><a href="#4-v-pre" class="headerlink" title="4.v-pre"></a>4.v-pre</h5><ul>
+<li>跳过解析，直接将原始内容渲染</li>
+</ul>
+<h5 id="5-v-cloak"><a href="#5-v-cloak" class="headerlink" title="5.v-cloak"></a>5.v-cloak</h5><ul>
+<li>用于渲染为完成编译的 DOM 模板</li>
+</ul>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Vue/Vue%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/">Vue状态管理</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Vue/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">Vue基础概念</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/archives">归档</a><a href="/categories">分类</a><a href="/tags">标签</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/mistbollon">GitHub</a></div><div class="sitemap-group"><span class="fs14">项目</span><a target="_blank" rel="noopener" href="https://github.com/mistbollon?tab=repositories">开源库</a></div></div><div class="text"><p>本站由 <a href="/">@GuoPeng</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+<!-- hexo injector body_end start -->
+  <style>
+    .highlight {
+      position: relative;
+    }
+    .highlight .code .copy-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 4px 0.5rem;
+      opacity: 0.25;
+      font-weight: 700;
+      color: var(--theme);
+      cursor: pointer;
+      transination: opacity 0.3s;
+    }
+    .highlight .code .copy-btn:hover{
+      color: var(--text-code);
+      opacity: 0.75;
+    }
+    .highlight .code .copy-btn.success {
+      color: var(--swiper-theme-color);
+      opacity: 0.75;
+
+    }
+    
+  </style>
+  <script>
+    const codeElementArr = document.querySelectorAll('.code')
+    codeElementArr.forEach(code => {
+      const codeBeforeWidth = window.getComputedStyle(code, '::before').width.split('px')[0]
+      const codeBeforePadding = window.getComputedStyle(code, '::before').padding.split(' ').pop().split('px')[0]
+  
+      // copy btn 
+      const codeCopyBtn = document.createElement('div')
+      codeCopyBtn.classList.add('copy-btn')
+      codeCopyBtn.style.right = Number(codeBeforeWidth) + Number(codeBeforePadding) * 2 + 'px'
+      codeCopyBtn.innerText = 'copy'
+      code.appendChild(codeCopyBtn)
+  
+      codeCopyBtn.addEventListener('click', async () => {
+        const currentCodeElement = code.children[0]?.innerText
+        await copyCode(currentCodeElement)
+
+
+        codeCopyBtn.innerText = 'copied'
+        codeCopyBtn.classList.add('success')
+
+        setTimeout(() => {
+          codeCopyBtn.innerText = 'copy'
+          codeCopyBtn.classList.remove('success')
+        },1000)
+      })
+    })
+    
+    async function copyCode(currentCode) {
+      console.log(currentCode)
+      console.log('copy')
+      if (navigator.clipboard) {
+        try {
+          await navigator.clipboard.writeText(currentCode)
+        } catch (error) {
+          // 未获得用户许可
+          console.error(error)
+        }
+      } else {
+        console.error('当前浏览器不支持此api')
+      }
+    }
+  </script>
+  <!-- hexo injector body_end end --></body>
+</html>
