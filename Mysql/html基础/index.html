@@ -20,20 +20,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>Vue基础概念 - GuoPeng Blog</title>
+  <title>Mysql数据库 - GuoPeng Blog</title>
 
   
-    <meta name="description" content="一、Vue 概念概念：Vue 是一个用于构建用户界面的渐进式的 javascript 框架。它基于标准 HTML、css 和 javascript 构建，可以帮助高效开发用界面，可以配合其他的工具进行开发，如 Vue-router、Vuex、axios、Pinia。 作用：vue 适合开发前后端分离的项目(SPA 类型)，单页面应用程序—在一个页面中实现所有的功能，没有真正的路径跳转。 核心： 数">
+    <meta name="description" content="Mysql 基础一、数据库1.数据库的概念： 数据库是一种特殊的文件，存储着需要的数据，数据库分为关系型数据库和非关系型数据库，常见的关系型数据库有 orcale、mysql、mysql server、sqlite 2.数据库的安装： Mysql 数据库安装启动 12345678910&#x2F;&#x2F;安装服务器端sudo apt-get install mysql-server&#x2F;&#x2F;启动服务sudo servi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础概念">
-<meta property="og:url" content="http://example.com/Vue/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:title" content="Mysql数据库">
+<meta property="og:url" content="http://example.com/Mysql/html%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="GuoPeng Blog">
-<meta property="og:description" content="一、Vue 概念概念：Vue 是一个用于构建用户界面的渐进式的 javascript 框架。它基于标准 HTML、css 和 javascript 构建，可以帮助高效开发用界面，可以配合其他的工具进行开发，如 Vue-router、Vuex、axios、Pinia。 作用：vue 适合开发前后端分离的项目(SPA 类型)，单页面应用程序—在一个页面中实现所有的功能，没有真正的路径跳转。 核心： 数">
+<meta property="og:description" content="Mysql 基础一、数据库1.数据库的概念： 数据库是一种特殊的文件，存储着需要的数据，数据库分为关系型数据库和非关系型数据库，常见的关系型数据库有 orcale、mysql、mysql server、sqlite 2.数据库的安装： Mysql 数据库安装启动 12345678910&#x2F;&#x2F;安装服务器端sudo apt-get install mysql-server&#x2F;&#x2F;启动服务sudo servi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-10T00:10:10.000Z">
-<meta property="article:modified_time" content="2023-06-15T08:07:33.870Z">
+<meta property="article:published_time" content="2021-03-08T01:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-27T08:13:06.142Z">
 <meta property="article:author" content="陈国朋">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
   
   
@@ -81,7 +81,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Vue基础概念</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Vue-%E6%A6%82%E5%BF%B5"><span class="toc-text">一、Vue 概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-text">概念：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%EF%BC%9A"><span class="toc-text">作用：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%EF%BC%9A"><span class="toc-text">核心：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Vue-%E5%AE%89%E8%A3%85"><span class="toc-text">二、Vue 安装</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Mysql数据库</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql-%E5%9F%BA%E7%A1%80"><span class="toc-text">Mysql 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">一、数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4"><span class="toc-text">二、操作指令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4"><span class="toc-text">1.数据库操作指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E8%A1%A8%E6%93%8D%E4%BD%9C%E6%8C%87%E4%BB%A4"><span class="toc-text">2.数据表操作指令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E5%A4%87%E4%BB%BD"><span class="toc-text">三、数据库备份</span></a></li></ol></li></ol></li></ol></div></div></widget>
 
 
 
@@ -96,48 +96,85 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Vue%E4%BD%BF%E7%94%A8/">Vue使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-09-10T00:10:10.000Z">2021-09-10</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BD%BF%E7%94%A8/">Mysql数据库使用</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-03-08T01:00:00.000Z">2021-03-08</time></div></div>
 
 <article class='md-text content post'>
-<h1 class="article-title"><span>Vue基础概念</span></h1>
-<h3 id="一、Vue-概念"><a href="#一、Vue-概念" class="headerlink" title="一、Vue 概念"></a>一、Vue 概念</h3><h5 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h5><p>Vue 是一个用于构建用户界面的渐进式的 javascript 框架。它基于标准 HTML、css 和 javascript 构建，可以帮助高效开发用界面，可以配合其他的工具进行开发，如 Vue-router、Vuex、axios、Pinia。</p>
-<h5 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h5><p>vue 适合开发前后端分离的项目(SPA 类型)，单页面应用程序—在一个页面中实现所有的功能，没有真正的路径跳转。</p>
-<h5 id="核心："><a href="#核心：" class="headerlink" title="核心："></a>核心：</h5><ul>
-<li>数据驱动视图</li>
-</ul>
-<p>只需要修改页面绑定的数据就可以更新其对应的视图，优化 DOM 操作，提高开发效率。</p>
-<ul>
-<li><p>MVVM（双向数据绑定）<br>让数据实现双向绑定，实心数据自动双向同步</p>
-<ul>
-<li>M—Model(数据模型)<br>在 data 中定义，M 修改数据-&gt;V 视图自动同步</li>
-<li>V—View(视图页面)<br>在 html 中，V 修改视图-&gt;M 数据自动同步</li>
-<li>VM—ViewModel（视图模型）</li>
-</ul>
+<h1 class="article-title"><span>Mysql数据库</span></h1>
+<h2 id="Mysql-基础"><a href="#Mysql-基础" class="headerlink" title="Mysql 基础"></a>Mysql 基础</h2><h4 id="一、数据库"><a href="#一、数据库" class="headerlink" title="一、数据库"></a>一、数据库</h4><p><strong>1.数据库的概念：</strong></p>
+<p>数据库是一种特殊的文件，存储着需要的数据，数据库分为关系型数据库和非关系型数据库，常见的关系型数据库有 orcale、mysql、mysql server、sqlite</p>
+<p><strong>2.数据库的安装：</strong></p>
+<p>Mysql 数据库安装启动</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//安装服务器端</span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line">//启动服务</span><br><span class="line">sudo service mysql start</span><br><span class="line">//检测试服存在mysql</span><br><span class="line">mysql: ps ajx|grep mysql</span><br><span class="line">//停止服务</span><br><span class="line">sudo service mysql stop</span><br><span class="line">//重启服务</span><br><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
+
+<h4 id="二、操作指令"><a href="#二、操作指令" class="headerlink" title="二、操作指令"></a>二、操作指令</h4><h5 id="1-数据库操作指令"><a href="#1-数据库操作指令" class="headerlink" title="1.数据库操作指令"></a>1.数据库操作指令</h5><ul>
+<li><p>创建数据库:<code>create databases 数据库名</code></p>
 </li>
-<li><p>组件化开发</p>
+<li><p>删除数据库:<code>drop database 数据库名</code></p>
 </li>
-</ul>
-<p>将页面按照功能拆分成单独的组件，每一个组件有独立的功能，提高代码的可复用性和维护。</p>
-<h3 id="二、Vue-安装"><a href="#二、Vue-安装" class="headerlink" title="二、Vue 安装"></a>二、Vue 安装</h3><p>通过 script 引入</p>
-<ul>
-<li><p>本地下载</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://cn.vuejs.org/js/vue.js">https://cn.vuejs.org/js/vue.js</a> 下载地址</li>
-<li>放在本地项目，script 引入即可</li>
-</ul>
+<li><p>登录:<code>mysql -u用户名 -p密码</code></p>
 </li>
-<li><p>cdn 的方式</p>
-<ul>
-<li><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2.6.11&quot;&gt;&lt;/script&gt;</code></li>
-</ul>
+<li><p>退出: <code>quiet; exit;</code></p>
+</li>
+<li><p>查看所有数据库:<code>show databases;</code></p>
+</li>
+<li><p>查看 mysql 版本：<code>select version();</code></p>
+</li>
+<li><p>查看时间:<code>select show();</code></p>
+</li>
+<li><p>使用数据库:<code>use 数据库名;</code></p>
+</li>
+<li><p>查看当使用数据库：<code>select database();</code></p>
+</li>
+<li><p>查看当前数据库的所有数据表:<code>show tables;</code></p>
 </li>
 </ul>
-<p>通过 npm 安装</p>
+<h5 id="2-数据表操作指令"><a href="#2-数据表操作指令" class="headerlink" title="2.数据表操作指令"></a>2.数据表操作指令</h5><ul>
+<li>数据表创建，在 use 数据库后再创建</li>
+</ul>
+<p><code>create table 数据表的名字(字段 类型 约束,字段 类型 约束);</code></p>
+<p>约束</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">unsigned 无符号 整形</span><br><span class="line">auto_increment 整形</span><br><span class="line">primary key 主键 唯一标识这条数据</span><br><span class="line">not null 不能为空</span><br></pre></td></tr></table></figure>
+
+<p>类型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">整数类型：</span><br><span class="line">int型：是由四个字节组成的整数，输出范围(-2147483 648~2 147 483 647)</span><br><span class="line"></span><br><span class="line">bigint型：是由八个字节组成的整数，输出范围(-9,223,372,036,854,775,808~9 223 372 036 854 775 807)</span><br><span class="line"></span><br><span class="line">tinyint型：只能输入(0~225)之间的整数</span><br><span class="line"></span><br><span class="line">smallint型：是由两个字节组成的整数，输出范围(-32768~32767)</span><br><span class="line"></span><br><span class="line">浮点数类型：</span><br><span class="line">float：表示单精度浮点数值</span><br><span class="line"></span><br><span class="line">double：表示双精度浮点数值</span><br><span class="line"></span><br><span class="line">字符串类型：</span><br><span class="line"></span><br><span class="line">1、charchar(n)：固定长度，最多255个字符</span><br><span class="line"></span><br><span class="line">2、varchar(n)：固定长度，最多65535个字符</span><br><span class="line"></span><br><span class="line">3、text：可变长度，最多65535个字符</span><br><span class="line"></span><br><span class="line">4、tinytext：可变长度，最多255个字符</span><br><span class="line"></span><br><span class="line">5、mediumtext：可变长度，最多2的24次方-1个字符</span><br><span class="line"></span><br><span class="line">6、longtext：可变长度，最多2的32次方-1个字符</span><br><span class="line">日期与时间类型：</span><br><span class="line"></span><br><span class="line">1、data型：表示日期值，格式为(YYYY-MM-DD)，范围(1000.1.1~9999.12.31)</span><br><span class="line"></span><br><span class="line">2、datatime型：表示混合日期和时间值，格式为(YYYY-MM-DD HH:MM:SS)，范围(1000.1.1 00:00:00~9999.12.31 23:59:59)</span><br><span class="line"></span><br><span class="line">3、time型：表示更精确时间值或持续时间，格式为(HH:MM:SS)，范围(-838:59:59&#x27;~&#x27;838:59:59&#x27;)</span><br><span class="line"></span><br><span class="line">4、year型：表示年份值，格式为(YYYY)，范围(1901~2155)</span><br><span class="line"></span><br><span class="line">5、timestamp型：自动存储记录修改时间</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>例：创建一个 varchar 类型的表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table example(</span><br><span class="line">	id int primary key,</span><br><span class="line">	name varchar(50),</span><br><span class="line">	email varchar(100)</span><br><span class="line">)</span><br><span class="line">//插入数据</span><br><span class="line">insert into example (id,name,email) values (1,&#x27;Mike&#x27;,&#x27;123@163.com&#x27;);</span><br><span class="line">//查询</span><br><span class="line">select * from example;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>下载 <code>npm i vue</code></li>
-<li>导入 <code>const Vue = require(&#39;vue&#39;)</code> <code>import Vue from &#39;vue&#39;</code></li>
-<li>注意 前端开发，在浏览器运行不行。</li>
-<li>需要借助一些工具才能支持 以上写法。</li>
+<li>当前使用数据库的字段:<code>desc 库名</code></li>
+<li>查询所有字段:<code>select * from 表名</code></li>
+</ul>
+<p><strong>修改：</strong></p>
+<ul>
+<li><p>添加字段：<code>alter table 表名 add 列名 类型;</code></p>
+<p>alter table student add birthday datetime;</p>
+</li>
+<li><p>修改字段：<code>alter table 表名 change 原字段名 新字段名 类型及约束 </code></p>
+<p>alter table student change birth birthday datetime not null;</p>
+</li>
+<li><p>删除字段:<code>alter table 表名 drop 列名;</code></p>
+<p>alter table student drop birthday;</p>
+</li>
+<li><p>删除表: <code>drop 表名</code></p>
+</li>
+</ul>
+<p><strong>对字段的增删改查</strong></p>
+<ul>
+<li><p>添加：<code>insert into 表名 vlaues(...)</code></p>
+</li>
+<li><p>修改：<code>update 表名 set 列1=值,列2=值2 ... where 条件</code></p>
+<p>update students set name&#x3D;’李四’,age &#x3D; 18 where id &#x3D; 9;</p>
+</li>
+<li><p>删除：<code>delete from 表名 where 条件</code></p>
+<p>delete from students wherer id&gt;6;</p>
+</li>
+<li><p>查询：select id,name,age from student where id&gt;2 and isdelete&#x3D;0;</p>
+</li>
+</ul>
+<h4 id="三、数据库备份"><a href="#三、数据库备份" class="headerlink" title="三、数据库备份"></a>三、数据库备份</h4><ul>
+<li><strong>备份数据库</strong>：使用 mysqldump 命令，<code>mysqldump -u用户名 -p密码 数据库名&gt;导出文件名.sql</code></li>
+<li><strong>恢复</strong>: 连接 mysql 创建新的数据库，退出连接后使用<code>myslq -u用户名 -p密码 新的数据库名&lt;导入的文件名.sql</code></li>
 </ul>
 
 
@@ -146,7 +183,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Vue/Vue%E6%8C%87%E4%BB%A4/">Vue指令v-指令名</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Mysql/html%E5%9F%BA%E7%A1%80/">Mysql数据库</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Vue/Vue%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/">Vue基础概念</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/CSS/Css%E5%9F%BA%E7%A1%80/">CSS基础</a></div></section></div>
 
 
 
